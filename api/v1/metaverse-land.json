@@ -1,0 +1,401 @@
+{
+  "schema": 1,
+  "niche": "metaverse-land",
+  "runStartedAt": "2026-10-27T07:37:27.737Z",
+  "sources": {
+    "discord": "discord.com/api/v10/invites/<kodas>?with_counts=true (approximate_member_count, approximate_presence_count)",
+    "telegram": "t.me/<vardas> (.tgme_page_extra)"
+  },
+  "projects": [
+    {
+      "name": "Ertha",
+      "url": "https://ertha.io",
+      "category": "Realus zemelapis - (LT, Kaunas, BSC)",
+      "measuredAt": "2026-10-27T07:37:34.801Z",
+      "website": {
+        "ok": true,
+        "error": null,
+        "finalUrl": "https://ertha.io",
+        "responseTimeMs": 206
+      },
+      "discord": {
+        "invite": "ertha",
+        "source": "sarasas",
+        "name": "Ertha",
+        "members": 182,
+        "online": 145
+      },
+      "telegram": {
+        "url": "https://t.me/erthagame",
+        "source": "sarasas",
+        "name": "Ertha Announcements",
+        "members": 7113,
+        "online": null
+      }
+    },
+    {
+      "name": "Next Earth",
+      "url": "https://nextearth.io",
+      "category": "Realus zemelapis - (HU, Polygon)",
+      "measuredAt": "2026-10-27T07:37:43.617Z",
+      "website": {
+        "ok": true,
+        "error": null,
+        "finalUrl": "https://nextearth.io",
+        "responseTimeMs": 204
+      },
+      "discord": {
+        "invite": "354vcNaD",
+        "source": "sarasas",
+        "name": "Nextearth",
+        "members": 715,
+        "online": 4
+      },
+      "telegram": {
+        "url": "https://t.me/nextearth_chat",
+        "source": "sarasas",
+        "name": "Next Earth Official",
+        "members": 3089,
+        "online": 95
+      }
+    },
+    {
+      "name": "Upland",
+      "url": "https://upland.me",
+      "category": "Realus zemelapis - (US, blockchain)",
+      "measuredAt": "2026-10-27T07:37:53.048Z",
+      "website": {
+        "ok": true,
+        "error": null,
+        "finalUrl": "https://upland.me",
+        "responseTimeMs": 290
+      },
+      "discord": {
+        "invite": "upland",
+        "source": "sarasas",
+        "name": "Upland",
+        "members": 32042,
+        "online": 1775
+      },
+      "telegram": {
+        "url": "https://t.me/upland",
+        "source": "sarasas",
+        "name": "Upland Community (Official)",
+        "members": 10593,
+        "online": 277
+      }
+    },
+    {
+      "name": "Earth 2",
+      "url": "https://earth2.io",
+      "category": "Realus zemelapis - (AU, NE blockchain)",
+      "measuredAt": "2026-10-27T07:37:59.670Z",
+      "website": {
+        "ok": true,
+        "error": null,
+        "finalUrl": "https://earth2.io",
+        "responseTimeMs": 41
+      },
+      "discord": {
+        "invite": "earth2",
+        "source": "sarasas",
+        "name": "Earth 2 Official",
+        "members": 17295,
+        "online": 981
+      },
+      "telegram": null
+    },
+    {
+      "name": "SuperWorld",
+      "url": "https://www.superworldapp.com",
+      "category": "Realus zemelapis - (US, AR, Ethereum)",
+      "measuredAt": "2026-10-27T07:38:08.066Z",
+      "website": {
+        "ok": true,
+        "error": null,
+        "finalUrl": "https://www.superworldapp.com",
+        "responseTimeMs": 31
+      },
+      "discord": {
+        "invite": "ZUMJjrg4nx",
+        "source": "sarasas",
+        "name": "SuperWorld",
+        "members": 7460,
+        "online": 75
+      },
+      "telegram": {
+        "url": "https://t.me/superworldtoken",
+        "source": "sarasas",
+        "name": "[Official] SuperWorld 🌎❤️",
+        "members": 27037,
+        "online": 353
+      }
+    },
+    {
+      "name": "OVER (OVR)",
+      "url": "https://www.overthereality.ai",
+      "category": "Realus zemelapis - (IT, AR, Ethereum/Polygon)",
+      "measuredAt": "2026-10-27T07:38:16.634Z",
+      "website": {
+        "ok": true,
+        "error": null,
+        "finalUrl": "https://www.overthereality.ai",
+        "responseTimeMs": 80
+      },
+      "discord": {
+        "invite": "overthereality",
+        "source": "sarasas",
+        "name": "Over the Reality",
+        "members": 9687,
+        "online": 226
+      },
+      "telegram": {
+        "url": "https://t.me/OVRtheReality",
+        "source": "sarasas",
+        "name": "Over the Reality",
+        "members": 6738,
+        "online": 142
+      }
+    },
+    {
+      "name": "Spheroid Universe",
+      "url": "https://spheroiduniverse.io",
+      "category": "Realus zemelapis - (AR)",
+      "measuredAt": "2026-10-27T07:38:25.682Z",
+      "website": {
+        "ok": true,
+        "error": null,
+        "finalUrl": "https://spheroiduniverse.io",
+        "responseTimeMs": 66
+      },
+      "discord": {
+        "invite": "spheroiduniverse",
+        "source": "puslapis",
+        "name": null,
+        "members": null,
+        "online": null
+      },
+      "telegram": {
+        "url": "https://t.me/spheroiduniverseio",
+        "source": "sarasas",
+        "name": "Spheroid Universe IO",
+        "members": 17743,
+        "online": 243
+      }
+    },
+    {
+      "name": "Decentraland",
+      "url": "https://decentraland.org",
+      "category": "Virtualus pasaulis - (Ethereum)",
+      "measuredAt": "2026-10-27T07:38:34.625Z",
+      "website": {
+        "ok": true,
+        "error": null,
+        "finalUrl": "https://decentraland.org",
+        "responseTimeMs": 57
+      },
+      "discord": {
+        "invite": "decentraland",
+        "source": "sarasas",
+        "name": "Decentraland",
+        "members": 130909,
+        "online": 2603
+      },
+      "telegram": null
+    },
+    {
+      "name": "The Sandbox",
+      "url": "https://www.sandbox.game",
+      "category": "Virtualus pasaulis - (Ethereum/Polygon)",
+      "measuredAt": "2026-10-27T07:38:40.158Z",
+      "website": {
+        "ok": false,
+        "error": "HTTP 403 - turinio negauta",
+        "finalUrl": "https://www.sandbox.game",
+        "responseTimeMs": null
+      },
+      "discord": {
+        "invite": "thesandboxgame",
+        "source": "sarasas",
+        "name": "The Sandbox",
+        "members": 250718,
+        "online": 6572
+      },
+      "telegram": null
+    },
+    {
+      "name": "Somnium Space",
+      "url": "https://somniumspace.com",
+      "category": "Virtualus pasaulis - (VR, Ethereum)",
+      "measuredAt": "2026-10-27T07:38:47.111Z",
+      "website": {
+        "ok": true,
+        "error": null,
+        "finalUrl": "https://somniumspace.com",
+        "responseTimeMs": 176
+      },
+      "discord": {
+        "invite": "somniumspace",
+        "source": "sarasas",
+        "name": "Somnium Space VR",
+        "members": 6267,
+        "online": 1211
+      },
+      "telegram": null
+    },
+    {
+      "name": "Voxels",
+      "url": "https://www.voxels.com",
+      "category": "Virtualus pasaulis - (Ethereum)",
+      "measuredAt": "2026-10-27T07:38:50.953Z",
+      "website": {
+        "ok": true,
+        "error": null,
+        "finalUrl": "https://www.voxels.com",
+        "responseTimeMs": 516
+      },
+      "discord": null,
+      "telegram": null
+    },
+    {
+      "name": "Bit.Country (Mnet)",
+      "url": "https://bit.country",
+      "category": "Virtualus pasaulis - (Polkadot)",
+      "measuredAt": "2026-10-27T07:38:57.987Z",
+      "website": {
+        "ok": true,
+        "error": null,
+        "finalUrl": "https://bit.country",
+        "responseTimeMs": 41
+      },
+      "discord": {
+        "invite": "PaMAXZZ59N",
+        "source": "sarasas",
+        "name": "Mnet (Formerly Bit.Country)",
+        "members": 31251,
+        "online": 391
+      },
+      "telegram": null
+    },
+    {
+      "name": "Aavegotchi",
+      "url": "https://www.aavegotchi.com",
+      "category": "Virtualus pasaulis - (Base)",
+      "measuredAt": "2026-10-27T07:39:03.987Z",
+      "website": {
+        "ok": true,
+        "error": null,
+        "finalUrl": "https://www.aavegotchi.com",
+        "responseTimeMs": 398
+      },
+      "discord": {
+        "invite": "aavegotchi",
+        "source": "sarasas",
+        "name": "Aavegotchi",
+        "members": 24936,
+        "online": 1006
+      },
+      "telegram": null
+    },
+    {
+      "name": "Pixels",
+      "url": "https://www.pixels.xyz",
+      "category": "Virtualus pasaulis - (Ronin)",
+      "measuredAt": "2026-10-27T07:39:10.005Z",
+      "website": {
+        "ok": true,
+        "error": null,
+        "finalUrl": "https://www.pixels.xyz",
+        "responseTimeMs": 87
+      },
+      "discord": {
+        "invite": "pixels",
+        "source": "sarasas",
+        "name": "Pixels",
+        "members": 209941,
+        "online": 7117
+      },
+      "telegram": null
+    },
+    {
+      "name": "Wilder World",
+      "url": "https://www.wilderworld.com",
+      "category": "Virtualus pasaulis - (Ethereum)",
+      "measuredAt": "2026-10-27T07:39:20.238Z",
+      "website": {
+        "ok": true,
+        "error": null,
+        "finalUrl": "https://wilderworld.com/",
+        "responseTimeMs": 458
+      },
+      "discord": {
+        "invite": "wilderworld",
+        "source": "sarasas",
+        "name": "Wilder World",
+        "members": 42419,
+        "online": 1331
+      },
+      "telegram": {
+        "url": "https://t.me/wilderworld",
+        "source": "sarasas",
+        "name": "Wilderworld",
+        "members": 2,
+        "online": null
+      }
+    },
+    {
+      "name": "Otherside",
+      "url": "https://otherside.xyz",
+      "category": "Virtualus pasaulis - (ApeChain)",
+      "measuredAt": "2026-10-27T07:39:23.933Z",
+      "website": {
+        "ok": true,
+        "error": null,
+        "finalUrl": "https://www.otherside.xyz/",
+        "responseTimeMs": 220
+      },
+      "discord": null,
+      "telegram": null
+    },
+    {
+      "name": "Alien Worlds",
+      "url": "https://alienworlds.io",
+      "category": "Virtualus pasaulis - (WAX)",
+      "measuredAt": "2026-10-27T07:39:32.492Z",
+      "website": {
+        "ok": true,
+        "error": null,
+        "finalUrl": "https://alienworlds.io",
+        "responseTimeMs": 61
+      },
+      "discord": {
+        "invite": "wswdNGKwXQ",
+        "source": "sarasas",
+        "name": "Alien Worlds Official",
+        "members": 34366,
+        "online": 1402
+      },
+      "telegram": {
+        "url": "https://t.me/AlienWorlds_Announcements",
+        "source": "sarasas",
+        "name": "Alien Worlds Announcements",
+        "members": 2114,
+        "online": null
+      }
+    },
+    {
+      "name": "Netvrk",
+      "url": "https://www.netvrk.co",
+      "category": "Virtualus pasaulis - (Ethereum)",
+      "measuredAt": "2026-10-27T07:39:35.978Z",
+      "website": {
+        "ok": true,
+        "error": null,
+        "finalUrl": "https://www.netvrk.co",
+        "responseTimeMs": 135
+      },
+      "discord": null,
+      "telegram": null
+    }
+  ]
+}
