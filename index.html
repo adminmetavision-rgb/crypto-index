@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Metaverse land communities - community index | MetaVision</title>
+<meta name="description" content="Discord and Telegram community size and activity for 15 metaverse land communities, measured 27 Oct 2026, 07:37 UTC.">
+<link rel="canonical" href="https://crypto.metavision.click/">
+<meta property="og:title" content="Metaverse land communities - community index">
+<meta property="og:description" content="Discord and Telegram community size and activity for 15 metaverse land communities, measured 27 Oct 2026, 07:37 UTC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Barlow+Semi+Condensed:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  /* Spalvos ir zenklas suderinti su tenders.metavision.click (MetaVision produktu seima) */
+  :root {
+    --bg: #0B1120; --surface: #0F172A; --rule: #1E293B; --ink: #E2E8F0; --muted: #94A3B8;
+    --accent: #3B8EF0; --growth: #34C27A; --flag: #F2B544; --track: #1E293B;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "Barlow", "Segoe UI", system-ui, sans-serif; font-size: 17px; line-height: 1.55;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+  .topbar { border-bottom: 1px solid var(--rule); background: #0D1426; }
+  .topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 22px; padding-bottom: 22px; }
+  .brand { display: flex; align-items: center; gap: 16px; }
+  .mark { display: inline-flex; color: var(--accent); }
+  .brand-line { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .wordmark { color: var(--ink); text-decoration: none; font-weight: 600; font-size: 1.35rem; letter-spacing: 0.2em; }
+  .badge {
+    color: var(--accent); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.14em;
+    border: 1px solid rgba(59, 142, 240, 0.45); background: rgba(59, 142, 240, 0.1);
+    padding: 2px 10px; border-radius: 4px;
+  }
+  .tagline { margin: 2px 0 0; color: var(--muted); font-size: 0.95rem; }
+  .pill { margin: 0; color: var(--muted); font-size: 0.9rem; border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; }
+
+  h1, h2, thead th { font-family: "Barlow Semi Condensed", "Arial Narrow", "Segoe UI", sans-serif; font-weight: 600; }
+  h1 { font-size: 2.6rem; line-height: 1.1; letter-spacing: -0.01em; margin: 48px 0 12px; }
+  h2 { font-size: 1.45rem; margin: 56px 0 12px; }
+  .lead { max-width: 68ch; margin: 0 0 8px; }
+  .measured { color: var(--muted); margin: 0 0 28px; }
+
+  .panel { background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; overflow: hidden; }
+  .table-scroll { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  thead th {
+    text-align: left; font-weight: 500; font-size: 0.95rem; color: var(--muted);
+    padding: 14px 14px 10px; border-bottom: 1px solid var(--rule); white-space: nowrap; vertical-align: bottom;
+  }
+  tbody th, tbody td { padding: 14px; border-bottom: 1px solid var(--rule); vertical-align: top; text-align: left; }
+  tbody tr:last-child th, tbody tr:last-child td { border-bottom: none; }
+  .project { font-weight: 500; min-width: 170px; }
+  .project a { color: var(--ink); }
+  thead th:first-child, tbody th.project { position: sticky; left: 0; background: var(--surface); z-index: 1; }
+  .sub { display: block; font-size: 0.85rem; color: var(--muted); font-weight: 400; }
+  thead .num, td.num { text-align: right; white-space: nowrap; }
+  .none { color: var(--muted); }
+  td.share { min-width: 190px; white-space: nowrap; }
+  .track { position: relative; display: inline-block; vertical-align: middle; width: 120px; height: 10px; background: var(--track); border-radius: 5px; }
+  .tick { position: absolute; top: 2px; width: 1px; height: 6px; background: #334155; }
+  .mark-v { position: absolute; top: -3px; width: 4px; height: 16px; margin-left: -2px; background: var(--growth); border-radius: 2px; }
+  .track.over .mark-v { background: var(--flag); }
+  .share-num { margin-left: 10px; }
+  .share-num.flag { color: var(--flag); font-weight: 500; }
+  td.notes { min-width: 240px; max-width: 340px; font-size: 0.92rem; color: var(--flag); }
+  td.notes p { margin: 0 0 6px; }
+  td.notes p:last-child { margin-bottom: 0; }
+  .scale-note { color: var(--muted); font-size: 0.92rem; margin: 12px 0 0; }
+  .prose { max-width: 68ch; }
+  .prose p { margin: 0 0 14px; }
+  code { font-size: 0.92em; }
+  pre { background: var(--surface); border: 1px solid var(--rule); padding: 14px 16px; border-radius: 10px; overflow-x: auto; font-size: 0.88rem; line-height: 1.45; }
+  footer { margin-top: 64px; padding: 20px 0 32px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.92rem; text-align: center; }
+  footer a { color: var(--ink); text-decoration: none; }
+  @media (max-width: 640px) {
+    .wrap { padding: 0 16px; }
+    h1 { font-size: 2rem; margin-top: 32px; }
+    .wordmark { font-size: 1.15rem; }
+    .brand { align-items: flex-start; gap: 12px; }
+    .mark svg { width: 36px; height: 36px; }
+    .topbar-inner { padding-top: 16px; padding-bottom: 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="brand">
+      <a class="mark" href="https://metavision.click" aria-label="MetaVision home">
+        <svg viewBox="0 0 44 44" width="44" height="44" aria-hidden="true"><rect x="1" y="1" width="42" height="42" rx="10" fill="rgba(59,142,240,0.08)" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.5"/><path d="M12 30V14l10 11 10-11v16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      </a>
+      <div>
+        <div class="brand-line"><a class="wordmark" href="https://metavision.click">METAVISION</a><span class="badge">COMMUNITY INDEX</span></div>
+        <p class="tagline">Discord and Telegram community data for Web3 projects, from public sources</p>
+      </div>
+    </div>
+    <p class="pill">Last measured 27 Oct 2026, 07:37 UTC</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <header>
+    <h1>Metaverse land communities</h1>
+    <p class="lead">Every project on this page sells land in a virtual world, and most of them talk to their users on Discord and Telegram. We count members and how many are online, using only public invite pages, and keep every measurement so changes over time become visible.</p>
+    <p class="measured">15 projects. Every measurement kept since 27 Oct 2026, 04:42 UTC.</p>
+  </header>
+
+  <main>
+    <div class="panel">
+    <div class="table-scroll">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Project</th>
+          <th scope="col" class="num">Discord members</th>
+          <th scope="col" class="num">Online now</th>
+          <th scope="col">Share online</th>
+          <th scope="col" class="num">Telegram</th>
+          <th scope="col">What we noticed</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th scope="row" class="project">
+          <a href="https://www.sandbox.game" rel="nofollow noopener">The Sandbox</a>
+          <span class="sub">Virtual world</span>
+        </th>
+        <td class="num"><a href="https://discord.gg/thesandboxgame" rel="nofollow noopener">250,718</a></td>
+        <td class="num">6,572</td>
+        <td class="share">
+          <span class="track" role="img" aria-label="2.6% of Discord members online">
+            <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
+            <span class="mark-v" style="left:26.2%"></span>
+          </span>
+          <span class="share-num">2.6%</span>
+        </td>
+        <td class="num"><span class="none">-</span></td>
+        <td class="notes"></td>
+      </tr>
+      <tr>
+        <th scope="row" class="project">
+          <a href="https://www.pixels.xyz" rel="nofollow noopener">Pixels</a>
+          <span class="sub">Virtual world</span>
+        </th>
+        <td class="num"><a href="https://discord.gg/pixels" rel="nofollow noopener">209,941</a></td>
+        <td class="num">7,117</td>
+        <td class="share">
+          <span class="track" role="img" aria-label="3.4% of Discord members online">
+            <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
+            <span class="mark-v" style="left:33.9%"></span>
+          </span>
+          <span class="share-num">3.4%</span>
+        </td>
+        <td class="num"><span class="none">-</span></td>
+        <td class="notes"></td>
+      </tr>
+      <tr>
+        <th scope="row" class="project">
+          <a href="https://decentraland.org" rel="nofollow noopener">Decentraland</a>
+          <span class="sub">Virtual world</span>
+        </th>
+        <td class="num"><a href="https://discord.gg/decentraland" rel="nofollow noopener">130,909</a></td>
+        <td class="num">2,603</td>
+        <td class="share">
+          <span class="track" role="img" aria-label="2.0% of Discord members online">
+            <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
+            <span class="mark-v" style="left:19.9%"></span>
+          </span>
+          <span class="share-num">2.0%</span>
+        </td>
+        <td class="num"><span class="none">-</span></td>
+        <td class="notes"></td>
+      </tr>
+      <tr>
+        <th scope="row" class="project">
+          <a href="https://www.wilderworld.com" rel="nofollow noopener">Wilder World</a>
+          <span class="sub">Virtual world</span>
+        </th>
+        <td class="num"><a href="https://discord.gg/wilderworld" rel="nofollow noopener">42,419</a></td>
+        <td class="num">1,331</td>
+        <td class="share">
+          <span class="track" role="img" aria-label="3.1% of Discord members online">
+            <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
+            <span class="mark-v" style="left:31.4%"></span>
+          </span>
+          <span class="share-num">3.1%</span>
+        </td>
+        <td class="num"><a href="https://t.me/wilderworld" rel="nofollow noopener">2</a><span class="sub">channel</span></td>
+        <td class="notes"><p>The Telegram link leads to a channel with 2 subscribers.</p></td>
+      </tr>
+      <tr>
+        <th scope="row" class="project">
+          <a href="https://alienworlds.io" rel="nofollow noopener">Alien Worlds</a>
+          <span class="sub">Virtual world</span>
+        </th>
+        <td class="num"><a href="https://discord.gg/wswdNGKwXQ" rel="nofollow noopener">34,366</a></td>
+        <td class="num">1,402</td>
+        <td class="share">
+          <span class="track" role="img" aria-label="4.1% of Discord members online">
+            <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
+            <span class="mark-v" style="left:40.8%"></span>
+          </span>
+          <span class="share-num">4.1%</span>
+        </td>
+        <td class="num"><a href="https://t.me/AlienWorlds_Announcements" rel="nofollow noopener">2,114</a><span class="sub">channel</span></td>
+        <td class="notes"></td>
+      </tr>
+      <tr>
+        <th scope="row" class="project">
+          <a href="https://upland.me" rel="nofollow noopener">Upland</a>
+          <span class="sub">Real-world map</span>
+        </th>
+        <td class="num"><a href="https://discord.gg/upland" rel="nofollow noopener">32,042</a></td>
+        <td class="num">1,775</td>
+        <td class="share">
+          <span class="track" role="img" aria-label="5.5% of Discord members online">
+            <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
+            <span class="mark-v" style="left:55.4%"></span>
+          </span>
+          <span class="share-num">5.5%</span>
+        </td>
+        <td class="num"><a href="https://t.me/upland" rel="nofollow noopener">10,593</a><span class="sub">277 online</span></td>
+        <td class="notes"></td>
+      </tr>
+      <tr>
+        <th scope="row" class="project">
+          <a href="https://bit.country" rel="nofollow noopener">Bit.Country (Mnet)</a>
+          <span class="sub">Virtual world</span>
+        </th>
+        <td class="num"><a href="https://discord.gg/PaMAXZZ59N" rel="nofollow noopener">31,251</a></td>
+        <td class="num">391</td>
+        <td class="share">
+          <span class="track" role="img" aria-label="1.3% of Discord members online">
+            <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
+            <span class="mark-v" style="left:12.5%"></span>
+          </span>
+          <span class="share-num">1.3%</span>
+        </td>
+        <td class="num"><span class="none">-</span></td>
+        <td class="notes"></td>
+      </tr>
+      <tr>
+        <th scope="row" class="project">
+          <a href="https://www.aavegotchi.com" rel="nofollow noopener">Aavegotchi</a>
+          <span class="sub">Virtual world</span>
+        </th>
+        <td class="num"><a href="https://discord.gg/aavegotchi" rel="nofollow noopener">24,936</a></td>
+        <td class="num">1,006</td>
+        <td class="share">
+          <span class="track" role="img" aria-label="4.0% of Discord members online">
+            <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
+            <span class="mark-v" style="left:40.3%"></span>
+          </span>
+          <span class="share-num">4.0%</span>
+        </td>
+        <td class="num"><span class="none">-</span></td>
+        <td class="notes"></td>
+      </tr>
+      <tr>
+        <th scope="row" class="project">
+          <a href="https://earth2.io" rel="nofollow noopener">Earth 2</a>
+          <span class="sub">Real-world map</span>
+        </th>
+        <td class="num"><a href="https://discord.gg/earth2" rel="nofollow noopener">17,295</a></td>
+        <td class="num">981</td>
+        <td class="share">
+          <span class="track" role="img" aria-label="5.7% of Discord members online">
+            <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
+            <span class="mark-v" style="left:56.7%"></span>
+          </span>
+          <span class="share-num">5.7%</span>
+        </td>
+        <td class="num"><span class="none">-</span></td>
+        <td class="notes"></td>
+      </tr>
+      <tr>
+        <th scope="row" class="project">
+          <a href="https://www.overthereality.ai" rel="nofollow noopener">OVER (OVR)</a>
+          <span class="sub">Real-world map</span>
+        </th>
+        <td class="num"><a href="https://discord.gg/overthereality" rel="nofollow noopener">9,687</a></td>
+        <td class="num">226</td>
+        <td class="share">
+          <span class="track" role="img" aria-label="2.3% of Discord members online">
+            <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
+            <span class="mark-v" style="left:23.3%"></span>
+          </span>
+          <span class="share-num">2.3%</span>
+        </td>
+        <td class="num"><a href="https://t.me/OVRtheReality" rel="nofollow noopener">6,738</a><span class="sub">142 online</span></td>
+        <td class="notes"></td>
+      </tr>
+      <tr>
+        <th scope="row" class="project">
+          <a href="https://www.superworldapp.com" rel="nofollow noopener">SuperWorld</a>
+          <span class="sub">Real-world map</span>
+        </th>
+        <td class="num"><a href="https://discord.gg/ZUMJjrg4nx" rel="nofollow noopener">7,460</a></td>
+        <td class="num">75</td>
+        <td class="share">
+          <span class="track" role="img" aria-label="1.0% of Discord members online">
+            <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
+            <span class="mark-v" style="left:10.1%"></span>
+          </span>
+          <span class="share-num">1.0%</span>
+        </td>
+        <td class="num"><a href="https://t.me/superworldtoken" rel="nofollow noopener">27,037</a><span class="sub">353 online</span></td>
+        <td class="notes"></td>
+      </tr>
+      <tr>
+        <th scope="row" class="project">
+          <a href="https://somniumspace.com" rel="nofollow noopener">Somnium Space</a>
+          <span class="sub">Virtual world</span>
+        </th>
+        <td class="num"><a href="https://discord.gg/somniumspace" rel="nofollow noopener">6,267</a></td>
+        <td class="num">1,211</td>
+        <td class="share">
+          <span class="track over" role="img" aria-label="19.3% of Discord members online">
+            <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
+            <span class="mark-v" style="left:100.0%"></span>
+          </span>
+          <span class="share-num flag">19.3%</span>
+        </td>
+        <td class="num"><span class="none">-</span></td>
+        <td class="notes"><p>19.3% of Discord members online is unusually high for a human community.</p></td>
+      </tr>
+      <tr>
+        <th scope="row" class="project">
+          <a href="https://nextearth.io" rel="nofollow noopener">Next Earth</a>
+          <span class="sub">Real-world map</span>
+        </th>
+        <td class="num"><a href="https://discord.gg/354vcNaD" rel="nofollow noopener">715</a></td>
+        <td class="num">4</td>
+        <td class="share">
+          <span class="track" role="img" aria-label="0.6% of Discord members online">
+            <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
+            <span class="mark-v" style="left:5.6%"></span>
+          </span>
+          <span class="share-num">0.6%</span>
+        </td>
+        <td class="num"><a href="https://t.me/nextearth_chat" rel="nofollow noopener">3,089</a><span class="sub">95 online</span></td>
+        <td class="notes"></td>
+      </tr>
+      <tr>
+        <th scope="row" class="project">
+          <a href="https://ertha.io" rel="nofollow noopener">Ertha</a>
+          <span class="sub">Real-world map</span>
+        </th>
+        <td class="num"><a href="https://discord.gg/ertha" rel="nofollow noopener">182</a></td>
+        <td class="num">145</td>
+        <td class="share">
+          <span class="track over" role="img" aria-label="79.7% of Discord members online">
+            <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
+            <span class="mark-v" style="left:100.0%"></span>
+          </span>
+          <span class="share-num flag">79.7%</span>
+        </td>
+        <td class="num"><a href="https://t.me/erthagame" rel="nofollow noopener">7,113</a><span class="sub">channel</span></td>
+        <td class="notes"><p>79.7% of Discord members online is unusually high for a human community.</p></td>
+      </tr>
+      <tr>
+        <th scope="row" class="project">
+          <a href="https://spheroiduniverse.io" rel="nofollow noopener">Spheroid Universe</a>
+          <span class="sub">Real-world map</span>
+        </th>
+        <td class="num"><span class="none">-</span></td><td class="num"><span class="none">-</span></td>
+        <td class="share"><span class="none">-</span></td>
+        <td class="num"><a href="https://t.me/spheroiduniverseio" rel="nofollow noopener">17,743</a><span class="sub">243 online</span></td>
+        <td class="notes"><p>The Discord invite linked on the website could not be opened at measurement time.</p></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+    </div>
+    <p class="scale-note">The share scale runs from 0 to 10%. Values above it are pinned to the end and marked.</p>
+    <p class="scale-note">Not measured yet: Voxels, Otherside, Netvrk. We have not found a working public Discord or Telegram link for these projects.</p>
+
+    <section class="prose">
+      <h2>How we measure</h2>
+      <p>Discord members and online counts come from Discord's public invite page for each project's official invite link. Discord itself reports these numbers as approximate.</p>
+      <p>Telegram counts come from the public t.me page of the project's group or channel. Groups show members and how many are online; channels show subscribers only.</p>
+      <p>Online numbers are a snapshot at the moment of measurement and change through the day. A human community's online share rises and falls with time zones; a share that stays flat around the clock is worth a closer look.</p>
+      <p>We check that each link belongs to the project by the server or channel name it returns. We use no logins, no private data, and no estimates. Twitter/X follower counts and website traffic are not included, because they cannot be measured reliably from public data.</p>
+    </section>
+
+    <section class="prose">
+      <h2>Data access</h2>
+      <p>The latest measurement for this page is available as JSON:</p>
+      <pre><code>https://crypto.metavision.click/api/v1/metaverse-land.json</code></pre>
+      <p>We keep every measurement. If you want the full history, a CSV export, or alerts when a project's numbers change, write to <a href="https://metavision.click">metavision.click</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <a href="https://metavision.click">METAVISION</a> Autonomous Systems &bull; crypto.metavision.click &bull; Public data, no estimates
+  </footer>
+</div>
+</body>
+</html>
