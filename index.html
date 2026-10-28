@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Metaverse land communities - community index | MetaVision</title>
-<meta name="description" content="Discord and Telegram community size and activity for 15 metaverse land communities, measured 27 Oct 2026, 07:37 UTC.">
+<meta name="description" content="Discord and Telegram community size and activity for 15 metaverse land communities, measured 28 Oct 2026, 17:40 UTC.">
 <link rel="canonical" href="https://crypto.metavision.click/">
 <meta property="og:title" content="Metaverse land communities - community index">
-<meta property="og:description" content="Discord and Telegram community size and activity for 15 metaverse land communities, measured 27 Oct 2026, 07:37 UTC.">
+<meta property="og:description" content="Discord and Telegram community size and activity for 15 metaverse land communities, measured 28 Oct 2026, 17:40 UTC.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Barlow+Semi+Condensed:wght@500;600&display=swap" rel="stylesheet">
@@ -73,6 +73,22 @@
   td.notes p { margin: 0 0 6px; }
   td.notes p:last-child { margin-bottom: 0; }
   .scale-note { color: var(--muted); font-size: 0.92rem; margin: 12px 0 0; }
+  .chart { margin: 0 0 40px; }
+  .chart h2 { margin: 0 0 6px; }
+  .chart-lead { color: var(--muted); margin: 0 0 14px; max-width: 68ch; }
+  .chart-wrap { background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; padding: 14px 10px 6px; overflow-x: auto; }
+  .chart-wrap svg { display: block; width: 100%; min-width: 620px; height: auto; font-family: "Barlow", "Segoe UI", system-ui, sans-serif; }
+  .chart-wrap .grid { stroke: var(--rule); stroke-width: 1; }
+  .chart-wrap .tick { fill: var(--muted); font-size: 11px; }
+  .chart-wrap .axis { fill: var(--muted); font-size: 12px; }
+  .chart-wrap .hint { fill: #475569; font-size: 12px; }
+  .chart-wrap .dot { stroke: var(--surface); stroke-width: 2; }
+  .chart-wrap .dot.real { fill: var(--accent); }
+  .chart-wrap .dot.virtual { fill: var(--growth); }
+  .chart-wrap .dot.over { fill: var(--flag); }
+  .chart-wrap .arrow { fill: none; stroke: var(--flag); stroke-width: 2; }
+  .chart-wrap .label { fill: var(--ink); font-size: 12px; }
+  .chart-wrap .label.flag { fill: var(--flag); }
   .prose { max-width: 68ch; }
   .prose p { margin: 0 0 14px; }
   code { font-size: 0.92em; }
@@ -101,7 +117,7 @@
         <p class="tagline">Discord and Telegram community data for Web3 projects, from public sources</p>
       </div>
     </div>
-    <p class="pill">Last measured 27 Oct 2026, 07:37 UTC</p>
+    <p class="pill">Last measured 28 Oct 2026, 17:40 UTC</p>
   </div>
 </div>
 
@@ -113,6 +129,12 @@
   </header>
 
   <main>
+    <section class="chart">
+      <h2>Size and activity</h2>
+      <p class="chart-lead">Each dot is one project's Discord server. Further right means more members; higher means a larger share of them online at measurement time. A big community is not always a lively one.</p>
+      <div class="chart-wrap"><svg viewBox="0 0 760 440" role="img" aria-label="Scatter chart of 14 projects: Discord members against share of members online"><line x1="62.0" y1="34" x2="62.0" y2="384" class="grid"/><text x="62.0" y="404" class="tick" text-anchor="middle">100</text><line x1="230.5" y1="34" x2="230.5" y2="384" class="grid"/><text x="230.5" y="404" class="tick" text-anchor="middle">1k</text><line x1="399.0" y1="34" x2="399.0" y2="384" class="grid"/><text x="399.0" y="404" class="tick" text-anchor="middle">10k</text><line x1="567.5" y1="34" x2="567.5" y2="384" class="grid"/><text x="567.5" y="404" class="tick" text-anchor="middle">100k</text><line x1="736.0" y1="34" x2="736.0" y2="384" class="grid"/><text x="736.0" y="404" class="tick" text-anchor="middle">1M</text><line x1="62" y1="384.0" x2="736" y2="384.0" class="grid"/><text x="52" y="388.0" class="tick" text-anchor="end">0%</text><line x1="62" y1="325.7" x2="736" y2="325.7" class="grid"/><text x="52" y="329.7" class="tick" text-anchor="end">2%</text><line x1="62" y1="267.3" x2="736" y2="267.3" class="grid"/><text x="52" y="271.3" class="tick" text-anchor="end">4%</text><line x1="62" y1="209.0" x2="736" y2="209.0" class="grid"/><text x="52" y="213.0" class="tick" text-anchor="end">6%</text><line x1="62" y1="150.7" x2="736" y2="150.7" class="grid"/><text x="52" y="154.7" class="tick" text-anchor="end">8%</text><line x1="62" y1="92.3" x2="736" y2="92.3" class="grid"/><text x="52" y="96.3" class="tick" text-anchor="end">10%</text><line x1="62" y1="34.0" x2="736" y2="34.0" class="grid"/><text x="52" y="38.0" class="tick" text-anchor="end">12%</text><text x="399" y="428" class="axis" text-anchor="middle">Discord members (log scale)</text><text x="16" y="209" class="axis" text-anchor="middle" transform="rotate(-90 16 209)">Share online now</text><text x="72" y="50" class="hint">Smaller, more active</text><text x="726" y="372" class="hint" text-anchor="end">Larger, quieter</text><g transform="translate(486 14)"><circle cx="6" cy="0" r="5" class="dot real"/><text x="16" y="4" class="tick">Real-world map</text><circle cx="136" cy="0" r="5" class="dot virtual"/><text x="146" y="4" class="tick">Virtual world</text></g><g><title>The Sandbox: 249,787 members, 9,097 online (3.6%)</title><circle cx="634.5" cy="277.8" r="6" class="dot virtual"/><text x="644.5" y="281.8" class="label" text-anchor="start">The Sandbox</text></g><g><title>Pixels: 209,608 members, 9,090 online (4.3%)</title><circle cx="621.7" cy="257.5" r="6" class="dot virtual"/><text x="631.7" y="261.5" class="label" text-anchor="start">Pixels</text></g><g><title>Decentraland: 130,145 members, 3,481 online (2.7%)</title><circle cx="586.8" cy="306.0" r="6" class="dot virtual"/><text x="596.8" y="310.0" class="label" text-anchor="start">Decentraland</text></g><g><title>Wilder World: 42,268 members, 1,825 online (4.3%)</title><circle cx="504.5" cy="258.1" r="6" class="dot virtual"/><text x="514.5" y="262.1" class="label" text-anchor="start">Wilder World</text></g><g><title>Alien Worlds: 34,298 members, 1,858 online (5.4%)</title><circle cx="489.2" cy="226.0" r="6" class="dot virtual"/><text x="499.2" y="230.0" class="label" text-anchor="start">Alien Worlds</text></g><g><title>Upland: 31,951 members, 2,417 online (7.6%)</title><circle cx="484.0" cy="163.4" r="6" class="dot real"/><text x="494.0" y="167.4" class="label" text-anchor="start">Upland</text></g><g><title>Bit.Country (Mnet): 31,191 members, 665 online (2.1%)</title><circle cx="482.2" cy="321.8" r="6" class="dot virtual"/><text x="492.2" y="325.8" class="label" text-anchor="start">Bit.Country (Mnet)</text></g><g><title>Aavegotchi: 24,909 members, 1,354 online (5.4%)</title><circle cx="465.8" cy="225.5" r="6" class="dot virtual"/><text x="455.8" y="229.5" class="label" text-anchor="end">Aavegotchi</text></g><g><title>Earth 2: 17,164 members, 1,571 online (9.2%)</title><circle cx="438.5" cy="117.0" r="6" class="dot real"/><text x="448.5" y="121.0" class="label" text-anchor="start">Earth 2</text></g><g><title>OVER (OVR): 9,650 members, 278 online (2.9%)</title><circle cx="396.4" cy="300.0" r="6" class="dot real"/><text x="406.4" y="304.0" class="label" text-anchor="start">OVER (OVR)</text></g><g><title>SuperWorld: 7,455 members, 88 online (1.2%)</title><circle cx="377.5" cy="349.6" r="6" class="dot real"/><text x="387.5" y="353.6" class="label" text-anchor="start">SuperWorld</text></g><g><title>Somnium Space: 6,253 members, 1,477 online (23.6%)</title><circle cx="364.6" cy="34.0" r="6" class="dot over"/><path d="M359.6 25.0 L364.6 19.0 L369.6 25.0" class="arrow"/><text x="374.6" y="38.0" class="label flag" text-anchor="start">Somnium Space 23.6%</text></g><g><title>Next Earth: 715 members, 5 online (0.7%)</title><circle cx="206.0" cy="363.6" r="6" class="dot real"/><text x="216.0" y="367.6" class="label" text-anchor="start">Next Earth</text></g><g><title>Ertha: 182 members, 5 online (2.7%)</title><circle cx="105.8" cy="303.9" r="6" class="dot real"/><text x="115.8" y="307.9" class="label" text-anchor="start">Ertha</text></g></svg></div>
+      <p class="scale-note">Values above 12% are pinned to the top and marked. Not shown, no readable Discord invite: Spheroid Universe.</p>
+    </section>
     <div class="panel">
     <div class="table-scroll">
     <table>
@@ -132,14 +154,14 @@
           <a href="https://www.sandbox.game" rel="nofollow noopener">The Sandbox</a>
           <span class="sub">Virtual world</span>
         </th>
-        <td class="num"><a href="https://discord.gg/thesandboxgame" rel="nofollow noopener">250,718</a></td>
-        <td class="num">6,572</td>
+        <td class="num"><a href="https://discord.gg/thesandboxgame" rel="nofollow noopener">249,787</a></td>
+        <td class="num">9,097</td>
         <td class="share">
-          <span class="track" role="img" aria-label="2.6% of Discord members online">
+          <span class="track" role="img" aria-label="3.6% of Discord members online">
             <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
-            <span class="mark-v" style="left:26.2%"></span>
+            <span class="mark-v" style="left:36.4%"></span>
           </span>
-          <span class="share-num">2.6%</span>
+          <span class="share-num">3.6%</span>
         </td>
         <td class="num"><span class="none">-</span></td>
         <td class="notes"></td>
@@ -149,14 +171,14 @@
           <a href="https://www.pixels.xyz" rel="nofollow noopener">Pixels</a>
           <span class="sub">Virtual world</span>
         </th>
-        <td class="num"><a href="https://discord.gg/pixels" rel="nofollow noopener">209,941</a></td>
-        <td class="num">7,117</td>
+        <td class="num"><a href="https://discord.gg/pixels" rel="nofollow noopener">209,608</a></td>
+        <td class="num">9,090</td>
         <td class="share">
-          <span class="track" role="img" aria-label="3.4% of Discord members online">
+          <span class="track" role="img" aria-label="4.3% of Discord members online">
             <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
-            <span class="mark-v" style="left:33.9%"></span>
+            <span class="mark-v" style="left:43.4%"></span>
           </span>
-          <span class="share-num">3.4%</span>
+          <span class="share-num">4.3%</span>
         </td>
         <td class="num"><span class="none">-</span></td>
         <td class="notes"></td>
@@ -166,14 +188,14 @@
           <a href="https://decentraland.org" rel="nofollow noopener">Decentraland</a>
           <span class="sub">Virtual world</span>
         </th>
-        <td class="num"><a href="https://discord.gg/decentraland" rel="nofollow noopener">130,909</a></td>
-        <td class="num">2,603</td>
+        <td class="num"><a href="https://discord.gg/decentraland" rel="nofollow noopener">130,145</a></td>
+        <td class="num">3,481</td>
         <td class="share">
-          <span class="track" role="img" aria-label="2.0% of Discord members online">
+          <span class="track" role="img" aria-label="2.7% of Discord members online">
             <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
-            <span class="mark-v" style="left:19.9%"></span>
+            <span class="mark-v" style="left:26.7%"></span>
           </span>
-          <span class="share-num">2.0%</span>
+          <span class="share-num">2.7%</span>
         </td>
         <td class="num"><span class="none">-</span></td>
         <td class="notes"></td>
@@ -183,14 +205,14 @@
           <a href="https://www.wilderworld.com" rel="nofollow noopener">Wilder World</a>
           <span class="sub">Virtual world</span>
         </th>
-        <td class="num"><a href="https://discord.gg/wilderworld" rel="nofollow noopener">42,419</a></td>
-        <td class="num">1,331</td>
+        <td class="num"><a href="https://discord.gg/wilderworld" rel="nofollow noopener">42,268</a></td>
+        <td class="num">1,825</td>
         <td class="share">
-          <span class="track" role="img" aria-label="3.1% of Discord members online">
+          <span class="track" role="img" aria-label="4.3% of Discord members online">
             <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
-            <span class="mark-v" style="left:31.4%"></span>
+            <span class="mark-v" style="left:43.2%"></span>
           </span>
-          <span class="share-num">3.1%</span>
+          <span class="share-num">4.3%</span>
         </td>
         <td class="num"><a href="https://t.me/wilderworld" rel="nofollow noopener">2</a><span class="sub">channel</span></td>
         <td class="notes"><p>The Telegram link leads to a channel with 2 subscribers.</p></td>
@@ -200,16 +222,16 @@
           <a href="https://alienworlds.io" rel="nofollow noopener">Alien Worlds</a>
           <span class="sub">Virtual world</span>
         </th>
-        <td class="num"><a href="https://discord.gg/wswdNGKwXQ" rel="nofollow noopener">34,366</a></td>
-        <td class="num">1,402</td>
+        <td class="num"><a href="https://discord.gg/wswdNGKwXQ" rel="nofollow noopener">34,298</a></td>
+        <td class="num">1,858</td>
         <td class="share">
-          <span class="track" role="img" aria-label="4.1% of Discord members online">
+          <span class="track" role="img" aria-label="5.4% of Discord members online">
             <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
-            <span class="mark-v" style="left:40.8%"></span>
+            <span class="mark-v" style="left:54.2%"></span>
           </span>
-          <span class="share-num">4.1%</span>
+          <span class="share-num">5.4%</span>
         </td>
-        <td class="num"><a href="https://t.me/AlienWorlds_Announcements" rel="nofollow noopener">2,114</a><span class="sub">channel</span></td>
+        <td class="num"><a href="https://t.me/AlienWorlds_Announcements" rel="nofollow noopener">2,111</a><span class="sub">channel</span></td>
         <td class="notes"></td>
       </tr>
       <tr>
@@ -217,16 +239,16 @@
           <a href="https://upland.me" rel="nofollow noopener">Upland</a>
           <span class="sub">Real-world map</span>
         </th>
-        <td class="num"><a href="https://discord.gg/upland" rel="nofollow noopener">32,042</a></td>
-        <td class="num">1,775</td>
+        <td class="num"><a href="https://discord.gg/upland" rel="nofollow noopener">31,951</a></td>
+        <td class="num">2,417</td>
         <td class="share">
-          <span class="track" role="img" aria-label="5.5% of Discord members online">
+          <span class="track" role="img" aria-label="7.6% of Discord members online">
             <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
-            <span class="mark-v" style="left:55.4%"></span>
+            <span class="mark-v" style="left:75.6%"></span>
           </span>
-          <span class="share-num">5.5%</span>
+          <span class="share-num">7.6%</span>
         </td>
-        <td class="num"><a href="https://t.me/upland" rel="nofollow noopener">10,593</a><span class="sub">277 online</span></td>
+        <td class="num"><a href="https://t.me/upland" rel="nofollow noopener">10,572</a><span class="sub">320 online</span></td>
         <td class="notes"></td>
       </tr>
       <tr>
@@ -234,14 +256,14 @@
           <a href="https://bit.country" rel="nofollow noopener">Bit.Country (Mnet)</a>
           <span class="sub">Virtual world</span>
         </th>
-        <td class="num"><a href="https://discord.gg/PaMAXZZ59N" rel="nofollow noopener">31,251</a></td>
-        <td class="num">391</td>
+        <td class="num"><a href="https://discord.gg/PaMAXZZ59N" rel="nofollow noopener">31,191</a></td>
+        <td class="num">665</td>
         <td class="share">
-          <span class="track" role="img" aria-label="1.3% of Discord members online">
+          <span class="track" role="img" aria-label="2.1% of Discord members online">
             <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
-            <span class="mark-v" style="left:12.5%"></span>
+            <span class="mark-v" style="left:21.3%"></span>
           </span>
-          <span class="share-num">1.3%</span>
+          <span class="share-num">2.1%</span>
         </td>
         <td class="num"><span class="none">-</span></td>
         <td class="notes"></td>
@@ -251,14 +273,14 @@
           <a href="https://www.aavegotchi.com" rel="nofollow noopener">Aavegotchi</a>
           <span class="sub">Virtual world</span>
         </th>
-        <td class="num"><a href="https://discord.gg/aavegotchi" rel="nofollow noopener">24,936</a></td>
-        <td class="num">1,006</td>
+        <td class="num"><a href="https://discord.gg/aavegotchi" rel="nofollow noopener">24,909</a></td>
+        <td class="num">1,354</td>
         <td class="share">
-          <span class="track" role="img" aria-label="4.0% of Discord members online">
+          <span class="track" role="img" aria-label="5.4% of Discord members online">
             <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
-            <span class="mark-v" style="left:40.3%"></span>
+            <span class="mark-v" style="left:54.4%"></span>
           </span>
-          <span class="share-num">4.0%</span>
+          <span class="share-num">5.4%</span>
         </td>
         <td class="num"><span class="none">-</span></td>
         <td class="notes"></td>
@@ -268,14 +290,14 @@
           <a href="https://earth2.io" rel="nofollow noopener">Earth 2</a>
           <span class="sub">Real-world map</span>
         </th>
-        <td class="num"><a href="https://discord.gg/earth2" rel="nofollow noopener">17,295</a></td>
-        <td class="num">981</td>
+        <td class="num"><a href="https://discord.gg/earth2" rel="nofollow noopener">17,164</a></td>
+        <td class="num">1,571</td>
         <td class="share">
-          <span class="track" role="img" aria-label="5.7% of Discord members online">
+          <span class="track" role="img" aria-label="9.2% of Discord members online">
             <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
-            <span class="mark-v" style="left:56.7%"></span>
+            <span class="mark-v" style="left:91.5%"></span>
           </span>
-          <span class="share-num">5.7%</span>
+          <span class="share-num">9.2%</span>
         </td>
         <td class="num"><span class="none">-</span></td>
         <td class="notes"></td>
@@ -285,16 +307,16 @@
           <a href="https://www.overthereality.ai" rel="nofollow noopener">OVER (OVR)</a>
           <span class="sub">Real-world map</span>
         </th>
-        <td class="num"><a href="https://discord.gg/overthereality" rel="nofollow noopener">9,687</a></td>
-        <td class="num">226</td>
+        <td class="num"><a href="https://discord.gg/overthereality" rel="nofollow noopener">9,650</a></td>
+        <td class="num">278</td>
         <td class="share">
-          <span class="track" role="img" aria-label="2.3% of Discord members online">
+          <span class="track" role="img" aria-label="2.9% of Discord members online">
             <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
-            <span class="mark-v" style="left:23.3%"></span>
+            <span class="mark-v" style="left:28.8%"></span>
           </span>
-          <span class="share-num">2.3%</span>
+          <span class="share-num">2.9%</span>
         </td>
-        <td class="num"><a href="https://t.me/OVRtheReality" rel="nofollow noopener">6,738</a><span class="sub">142 online</span></td>
+        <td class="num"><a href="https://t.me/OVRtheReality" rel="nofollow noopener">6,729</a><span class="sub">176 online</span></td>
         <td class="notes"></td>
       </tr>
       <tr>
@@ -302,16 +324,16 @@
           <a href="https://www.superworldapp.com" rel="nofollow noopener">SuperWorld</a>
           <span class="sub">Real-world map</span>
         </th>
-        <td class="num"><a href="https://discord.gg/ZUMJjrg4nx" rel="nofollow noopener">7,460</a></td>
-        <td class="num">75</td>
+        <td class="num"><a href="https://discord.gg/ZUMJjrg4nx" rel="nofollow noopener">7,455</a></td>
+        <td class="num">88</td>
         <td class="share">
-          <span class="track" role="img" aria-label="1.0% of Discord members online">
+          <span class="track" role="img" aria-label="1.2% of Discord members online">
             <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
-            <span class="mark-v" style="left:10.1%"></span>
+            <span class="mark-v" style="left:11.8%"></span>
           </span>
-          <span class="share-num">1.0%</span>
+          <span class="share-num">1.2%</span>
         </td>
-        <td class="num"><a href="https://t.me/superworldtoken" rel="nofollow noopener">27,037</a><span class="sub">353 online</span></td>
+        <td class="num"><a href="https://t.me/superworldtoken" rel="nofollow noopener">27,015</a><span class="sub">159 online</span></td>
         <td class="notes"></td>
       </tr>
       <tr>
@@ -319,17 +341,17 @@
           <a href="https://somniumspace.com" rel="nofollow noopener">Somnium Space</a>
           <span class="sub">Virtual world</span>
         </th>
-        <td class="num"><a href="https://discord.gg/somniumspace" rel="nofollow noopener">6,267</a></td>
-        <td class="num">1,211</td>
+        <td class="num"><a href="https://discord.gg/somniumspace" rel="nofollow noopener">6,253</a></td>
+        <td class="num">1,477</td>
         <td class="share">
-          <span class="track over" role="img" aria-label="19.3% of Discord members online">
+          <span class="track over" role="img" aria-label="23.6% of Discord members online">
             <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
             <span class="mark-v" style="left:100.0%"></span>
           </span>
-          <span class="share-num flag">19.3%</span>
+          <span class="share-num flag">23.6%</span>
         </td>
         <td class="num"><span class="none">-</span></td>
-        <td class="notes"><p>19.3% of Discord members online is unusually high for a human community.</p></td>
+        <td class="notes"><p>23.6% of Discord members were online at measurement time, well above most projects on this page.</p></td>
       </tr>
       <tr>
         <th scope="row" class="project">
@@ -337,15 +359,15 @@
           <span class="sub">Real-world map</span>
         </th>
         <td class="num"><a href="https://discord.gg/354vcNaD" rel="nofollow noopener">715</a></td>
-        <td class="num">4</td>
+        <td class="num">5</td>
         <td class="share">
-          <span class="track" role="img" aria-label="0.6% of Discord members online">
+          <span class="track" role="img" aria-label="0.7% of Discord members online">
             <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
-            <span class="mark-v" style="left:5.6%"></span>
+            <span class="mark-v" style="left:7.0%"></span>
           </span>
-          <span class="share-num">0.6%</span>
+          <span class="share-num">0.7%</span>
         </td>
-        <td class="num"><a href="https://t.me/nextearth_chat" rel="nofollow noopener">3,089</a><span class="sub">95 online</span></td>
+        <td class="num"><a href="https://t.me/nextearth_chat" rel="nofollow noopener">3,087</a><span class="sub">99 online</span></td>
         <td class="notes"></td>
       </tr>
       <tr>
@@ -354,16 +376,16 @@
           <span class="sub">Real-world map</span>
         </th>
         <td class="num"><a href="https://discord.gg/ertha" rel="nofollow noopener">182</a></td>
-        <td class="num">145</td>
+        <td class="num">5</td>
         <td class="share">
-          <span class="track over" role="img" aria-label="79.7% of Discord members online">
+          <span class="track" role="img" aria-label="2.7% of Discord members online">
             <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
-            <span class="mark-v" style="left:100.0%"></span>
+            <span class="mark-v" style="left:27.5%"></span>
           </span>
-          <span class="share-num flag">79.7%</span>
+          <span class="share-num">2.7%</span>
         </td>
-        <td class="num"><a href="https://t.me/erthagame" rel="nofollow noopener">7,113</a><span class="sub">channel</span></td>
-        <td class="notes"><p>79.7% of Discord members online is unusually high for a human community.</p></td>
+        <td class="num"><a href="https://t.me/erthagame" rel="nofollow noopener">7,106</a><span class="sub">channel</span></td>
+        <td class="notes"></td>
       </tr>
       <tr>
         <th scope="row" class="project">
@@ -372,7 +394,7 @@
         </th>
         <td class="num"><span class="none">-</span></td><td class="num"><span class="none">-</span></td>
         <td class="share"><span class="none">-</span></td>
-        <td class="num"><a href="https://t.me/spheroiduniverseio" rel="nofollow noopener">17,743</a><span class="sub">243 online</span></td>
+        <td class="num"><a href="https://t.me/spheroiduniverseio" rel="nofollow noopener">17,688</a><span class="sub">284 online</span></td>
         <td class="notes"><p>The Discord invite linked on the website could not be opened at measurement time.</p></td>
       </tr>
       </tbody>
@@ -386,7 +408,7 @@
       <h2>How we measure</h2>
       <p>Discord members and online counts come from Discord's public invite page for each project's official invite link. Discord itself reports these numbers as approximate.</p>
       <p>Telegram counts come from the public t.me page of the project's group or channel. Groups show members and how many are online; channels show subscribers only.</p>
-      <p>Online numbers are a snapshot at the moment of measurement and change through the day. A human community's online share rises and falls with time zones; a share that stays flat around the clock is worth a closer look.</p>
+      <p>Online numbers are a snapshot at the moment of measurement and change through the day. Discord's approximate counts can also stay unchanged for hours, so we compare several measurements before reading anything into a single unusual value.</p>
       <p>We check that each link belongs to the project by the server or channel name it returns. We use no logins, no private data, and no estimates. Twitter/X follower counts and website traffic are not included, because they cannot be measured reliably from public data.</p>
     </section>
 
