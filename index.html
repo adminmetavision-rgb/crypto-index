@@ -1,428 +1,986 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lt">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Metaverse land communities - community index | MetaVision</title>
-<meta name="description" content="Discord and Telegram community size and activity for 15 metaverse land communities, measured 28 Oct 2026, 17:40 UTC.">
-<link rel="canonical" href="https://crypto.metavision.click/">
-<meta property="og:title" content="Metaverse land communities - community index">
-<meta property="og:description" content="Discord and Telegram community size and activity for 15 metaverse land communities, measured 28 Oct 2026, 17:40 UTC.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Barlow+Semi+Condensed:wght@500;600&display=swap" rel="stylesheet">
-<style>
-  /* Spalvos ir zenklas suderinti su tenders.metavision.click (MetaVision produktu seima) */
-  :root {
-    --bg: #0B1120; --surface: #0F172A; --rule: #1E293B; --ink: #E2E8F0; --muted: #94A3B8;
-    --accent: #3B8EF0; --growth: #34C27A; --flag: #F2B544; --track: #1E293B;
-    color-scheme: dark;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; background: var(--bg); color: var(--ink);
-    font-family: "Barlow", "Segoe UI", system-ui, sans-serif; font-size: 17px; line-height: 1.55;
-  }
-  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
-  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
-  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>METAVISION Crypto & DeFi Arena | Edukacinė Birža ir Kvestas</title>
+    <style>
+        :root {
+            --bg-dark: #090d16;
+            --bg-card: #151e32;
+            --bg-panel: #1e293b;
+            --accent-blue: #38bdf8;
+            --accent-green: #4ade80;
+            --accent-orange: #fb923c;
+            --accent-red: #f87171;
+            --accent-purple: #c084fc;
+            --accent-yellow: #facc15;
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
+            --border: #334155;
+        }
 
-  .topbar { border-bottom: 1px solid var(--rule); background: #0D1426; }
-  .topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 22px; padding-bottom: 22px; }
-  .brand { display: flex; align-items: center; gap: 16px; }
-  .mark { display: inline-flex; color: var(--accent); }
-  .brand-line { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-  .wordmark { color: var(--ink); text-decoration: none; font-weight: 600; font-size: 1.35rem; letter-spacing: 0.2em; }
-  .badge {
-    color: var(--accent); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.14em;
-    border: 1px solid rgba(59, 142, 240, 0.45); background: rgba(59, 142, 240, 0.1);
-    padding: 2px 10px; border-radius: 4px;
-  }
-  .tagline { margin: 2px 0 0; color: var(--muted); font-size: 0.95rem; }
-  .pill { margin: 0; color: var(--muted); font-size: 0.9rem; border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
 
-  h1, h2, thead th { font-family: "Barlow Semi Condensed", "Arial Narrow", "Segoe UI", sans-serif; font-weight: 600; }
-  h1 { font-size: 2.6rem; line-height: 1.1; letter-spacing: -0.01em; margin: 48px 0 12px; }
-  h2 { font-size: 1.45rem; margin: 56px 0 12px; }
-  .lead { max-width: 68ch; margin: 0 0 8px; }
-  .measured { color: var(--muted); margin: 0 0 28px; }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 16px;
+            line-height: 1.5;
+        }
 
-  .panel { background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; overflow: hidden; }
-  .table-scroll { overflow-x: auto; }
-  table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
-  thead th {
-    text-align: left; font-weight: 500; font-size: 0.95rem; color: var(--muted);
-    padding: 14px 14px 10px; border-bottom: 1px solid var(--rule); white-space: nowrap; vertical-align: bottom;
-  }
-  tbody th, tbody td { padding: 14px; border-bottom: 1px solid var(--rule); vertical-align: top; text-align: left; }
-  tbody tr:last-child th, tbody tr:last-child td { border-bottom: none; }
-  .project { font-weight: 500; min-width: 170px; }
-  .project a { color: var(--ink); }
-  thead th:first-child, tbody th.project { position: sticky; left: 0; background: var(--surface); z-index: 1; }
-  .sub { display: block; font-size: 0.85rem; color: var(--muted); font-weight: 400; }
-  thead .num, td.num { text-align: right; white-space: nowrap; }
-  .none { color: var(--muted); }
-  td.share { min-width: 190px; white-space: nowrap; }
-  .track { position: relative; display: inline-block; vertical-align: middle; width: 120px; height: 10px; background: var(--track); border-radius: 5px; }
-  .tick { position: absolute; top: 2px; width: 1px; height: 6px; background: #334155; }
-  .mark-v { position: absolute; top: -3px; width: 4px; height: 16px; margin-left: -2px; background: var(--growth); border-radius: 2px; }
-  .track.over .mark-v { background: var(--flag); }
-  .share-num { margin-left: 10px; }
-  .share-num.flag { color: var(--flag); font-weight: 500; }
-  td.notes { min-width: 240px; max-width: 340px; font-size: 0.92rem; color: var(--flag); }
-  td.notes p { margin: 0 0 6px; }
-  td.notes p:last-child { margin-bottom: 0; }
-  .scale-note { color: var(--muted); font-size: 0.92rem; margin: 12px 0 0; }
-  .chart { margin: 0 0 40px; }
-  .chart h2 { margin: 0 0 6px; }
-  .chart-lead { color: var(--muted); margin: 0 0 14px; max-width: 68ch; }
-  .chart-wrap { background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; padding: 14px 10px 6px; overflow-x: auto; }
-  .chart-wrap svg { display: block; width: 100%; min-width: 620px; height: auto; font-family: "Barlow", "Segoe UI", system-ui, sans-serif; }
-  .chart-wrap .grid { stroke: var(--rule); stroke-width: 1; }
-  .chart-wrap .tick { fill: var(--muted); font-size: 11px; }
-  .chart-wrap .axis { fill: var(--muted); font-size: 12px; }
-  .chart-wrap .hint { fill: #475569; font-size: 12px; }
-  .chart-wrap .dot { stroke: var(--surface); stroke-width: 2; }
-  .chart-wrap .dot.real { fill: var(--accent); }
-  .chart-wrap .dot.virtual { fill: var(--growth); }
-  .chart-wrap .dot.over { fill: var(--flag); }
-  .chart-wrap .arrow { fill: none; stroke: var(--flag); stroke-width: 2; }
-  .chart-wrap .label { fill: var(--ink); font-size: 12px; }
-  .chart-wrap .label.flag { fill: var(--flag); }
-  .prose { max-width: 68ch; }
-  .prose p { margin: 0 0 14px; }
-  code { font-size: 0.92em; }
-  pre { background: var(--surface); border: 1px solid var(--rule); padding: 14px 16px; border-radius: 10px; overflow-x: auto; font-size: 0.88rem; line-height: 1.45; }
-  footer { margin-top: 64px; padding: 20px 0 32px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.92rem; text-align: center; }
-  footer a { color: var(--ink); text-decoration: none; }
-  @media (max-width: 640px) {
-    .wrap { padding: 0 16px; }
-    h1 { font-size: 2rem; margin-top: 32px; }
-    .wordmark { font-size: 1.15rem; }
-    .brand { align-items: flex-start; gap: 12px; }
-    .mark svg { width: 36px; height: 36px; }
-    .topbar-inner { padding-top: 16px; padding-bottom: 16px; }
-  }
-</style>
+        .app-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* TOPBAR */
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 12px 18px;
+            border-radius: 14px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-logo {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #0ea5e9, #1e293b);
+            border: 1px solid var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.25rem;
+            color: var(--text-main);
+            box-shadow: 0 0 12px rgba(56, 189, 248, 0.35);
+        }
+
+        .brand h1 {
+            font-size: 1.2rem;
+            color: var(--accent-blue);
+            letter-spacing: 0.3px;
+        }
+
+        .live-dot {
+            width: 10px;
+            height: 10px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-green);
+            animation: pulse 1.5s infinite;
+            display: inline-block;
+            margin-right: 6px;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.25); opacity: 0.6; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .top-actions {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background: var(--bg-panel);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 8px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+        }
+
+        .btn:hover:not(:disabled) {
+            border-color: var(--accent-blue);
+            background: rgba(56, 189, 248, 0.15);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-primary {
+            background: var(--accent-blue);
+            color: #090d16;
+            border-color: var(--accent-blue);
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            background: #7dd3fc;
+            color: #090d16;
+        }
+
+        .btn-purple {
+            background: rgba(192, 132, 252, 0.15);
+            color: var(--accent-purple);
+            border-color: var(--accent-purple);
+        }
+
+        .btn-green {
+            background: rgba(74, 222, 128, 0.15);
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+
+        .btn-danger {
+            background: rgba(248, 113, 113, 0.15);
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+
+        .btn-orange {
+            background: rgba(251, 146, 60, 0.15);
+            color: var(--accent-orange);
+            border-color: var(--accent-orange);
+        }
+
+        /* TICKER BAR */
+        .ticker-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #0b111e;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 8px 16px;
+            margin-bottom: 14px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.86rem;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .ticker-items {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .ticker-pair {
+            cursor: pointer;
+            padding: 2px 8px;
+            border-radius: 6px;
+            transition: 0.2s;
+        }
+
+        .ticker-pair:hover, .ticker-pair.active {
+            background: rgba(56, 189, 248, 0.15);
+            border: 1px solid var(--accent-blue);
+        }
+
+        /* 3 STAGE TABS */
+        .day-tabs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        @media (max-width: 850px) {
+            .day-tabs { grid-template-columns: 1fr; }
+        }
+
+        .day-tab {
+            background: var(--bg-card);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 13px 16px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .day-tab.active {
+            border-color: var(--accent-blue);
+            background: rgba(56, 189, 248, 0.1);
+        }
+
+        .day-tab-title {
+            font-weight: 800;
+            font-size: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .day-tab-sub {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+            margin-top: 5px;
+        }
+
+        .status-pill {
+            font-size: 0.72rem;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .pill-open { background: rgba(74, 222, 128, 0.2); color: var(--accent-green); border: 1px solid var(--accent-green); }
+        .pill-orange { background: rgba(251, 146, 60, 0.2); color: var(--accent-orange); border: 1px solid var(--accent-orange); }
+        .pill-purple { background: rgba(192, 132, 252, 0.2); color: var(--accent-purple); border: 1px solid var(--accent-purple); }
+
+        /* MAIN LAYOUT */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 18px;
+        }
+
+        @media (max-width: 1020px) {
+            .main-grid { grid-template-columns: 1fr; }
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+        }
+
+        /* LOGIN */
+        .login-box {
+            max-width: 580px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .login-input {
+            width: 100%;
+            padding: 13px 16px;
+            font-size: 1.05rem;
+            background: #090d16;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            color: var(--text-main);
+            margin: 14px 0;
+            text-align: center;
+        }
+
+        /* HUD BAR */
+        .hud-bar {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        @media (max-width: 760px) {
+            .hud-bar { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .hud-item {
+            background: var(--bg-panel);
+            border: 1px solid var(--border);
+            padding: 10px 12px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .hud-label {
+            font-size: 0.72rem;
+            color: var(--text-sub);
+            text-transform: uppercase;
+        }
+
+        .hud-value {
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-top: 2px;
+        }
+
+        /* STAGE 1: QUANT LAB */
+        .story-box {
+            background: rgba(15, 23, 42, 0.85);
+            border-left: 4px solid var(--accent-orange);
+            padding: 14px;
+            border-radius: 0 10px 10px 0;
+            margin-bottom: 14px;
+            font-size: 0.96rem;
+        }
+
+        .bench-area {
+            background: #090d16;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 14px;
+            margin-bottom: 14px;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .tool-btn {
+            background: #1e293b;
+            color: var(--text-main);
+            border: 1px solid var(--accent-blue);
+            padding: 9px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.84rem;
+            text-align: left;
+        }
+
+        .tool-btn.used {
+            border-color: var(--accent-green);
+            background: rgba(74, 222, 128, 0.12);
+        }
+
+        .terminal-screen {
+            background: #030712;
+            border: 1px solid #1e293b;
+            border-radius: 8px;
+            padding: 11px;
+            font-family: 'Consolas', monospace;
+            color: var(--accent-green);
+            min-height: 76px;
+            font-size: 0.86rem;
+            white-space: pre-line;
+        }
+
+        .answers-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 680px) {
+            .answers-grid { grid-template-columns: 1fr; }
+        }
+
+        .ans-btn {
+            background: var(--bg-panel);
+            color: var(--text-main);
+            border: 2px solid var(--border);
+            padding: 12px 14px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-align: left;
+            transition: 0.2s;
+        }
+
+        .ans-btn:hover:not(:disabled) {
+            border-color: var(--accent-orange);
+            transform: translateY(-1px);
+        }
+
+        .ans-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+        /* STAGE 2: TRADING TERMINAL & CO-PILOT */
+        .trading-grid {
+            display: grid;
+            grid-template-columns: 1.55fr 1fr;
+            gap: 16px;
+        }
+
+        @media (max-width: 880px) {
+            .trading-grid { grid-template-columns: 1fr; }
+        }
+
+        .chart-box {
+            background: #060911;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 12px;
+        }
+
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        #priceChart {
+            width: 100%;
+            height: 290px;
+            background: #04070e;
+            border-radius: 8px;
+            display: block;
+        }
+
+        .order-panel {
+            background: var(--bg-panel);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--text-sub);
+            margin-bottom: 4px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 9px 11px;
+            background: #090d16;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-main);
+            font-family: 'Consolas', monospace;
+            font-size: 0.92rem;
+        }
+
+        .copilot-box {
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid var(--accent-blue);
+            border-radius: 12px;
+            padding: 12px 14px;
+            margin-top: 12px;
+        }
+
+        .copilot-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+            font-size: 0.86rem;
+            font-weight: 700;
+        }
+
+        .positions-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.83rem;
+        }
+
+        .positions-table th, .positions-table td {
+            border: 1px solid var(--border);
+            padding: 8px;
+            text-align: left;
+        }
+
+        .positions-table th {
+            background: #090d16;
+            color: var(--accent-blue);
+        }
+
+        /* STAGE 3: DEX & CERTIFICATE */
+        .dex-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.25fr;
+            gap: 18px;
+        }
+
+        @media (max-width: 860px) {
+            .dex-grid { grid-template-columns: 1fr; }
+        }
+
+        .cert-preview {
+            background: linear-gradient(145deg, #0d1526, #151e32);
+            border: 2px solid var(--accent-blue);
+            border-radius: 14px;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* LEADERBOARD */
+        .leaderboard-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .lb-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg-panel);
+            border: 1px solid var(--border);
+            padding: 9px 11px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+        }
+
+        .lb-row.me {
+            border-color: var(--accent-blue);
+            background: rgba(56, 189, 248, 0.12);
+        }
+
+        /* MODALS */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.82);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            padding: 16px;
+        }
+
+        .modal-card {
+            background: var(--bg-card);
+            border: 2px solid var(--accent-blue);
+            border-radius: 16px;
+            max-width: 920px;
+            width: 100%;
+            max-height: 88vh;
+            overflow-y: auto;
+            padding: 22px;
+        }
+    </style>
 </head>
 <body>
-<div class="topbar">
-  <div class="wrap topbar-inner">
-    <div class="brand">
-      <a class="mark" href="https://metavision.click" aria-label="MetaVision home">
-        <svg viewBox="0 0 44 44" width="44" height="44" aria-hidden="true"><rect x="1" y="1" width="42" height="42" rx="10" fill="rgba(59,142,240,0.08)" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.5"/><path d="M12 30V14l10 11 10-11v16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg>
-      </a>
-      <div>
-        <div class="brand-line"><a class="wordmark" href="https://metavision.click">METAVISION</a><span class="badge">COMMUNITY INDEX</span></div>
-        <p class="tagline">Discord and Telegram community data for Web3 projects, from public sources</p>
-      </div>
+
+<div class="app-wrapper">
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <div class="brand">
+            <div class="brand-logo">M</div>
+            <div>
+                <h1><span class="live-dot"></span>METAVISION: Crypto & DeFi Arena</h1>
+                <div style="font-size: 0.78rem; color: var(--text-sub);" id="subBrandText">
+                    Praktinė Biržos Akademija, Prop Firm Simuliatorius ir Web3 DEX • ES MiCA (4 ak. val.)
+                </div>
+            </div>
+        </div>
+        <div class="top-actions">
+            <button class="btn" onclick="switchLanguage()" id="langBtn">🇱🇹 LT / 🇬🇧 EN</button>
+            <button class="btn btn-purple" onclick="toggleModal('handbookModal', true)" id="guideBtn">📖 Akademijos Gidas ir Špargalkė</button>
+            <button class="btn btn-green" onclick="toggleModal('verifyModal', true)" id="verifyTopBtn">🎓 Patikrinti Sertifikatą</button>
+            <button class="btn" onclick="toggleSound()" id="soundBtn">🔊 Garsas: ĮJ.</button>
+            <button class="btn btn-orange" onclick="openBrokerModal()">🏦 Maklerio Pultas (Demo / 2FA)</button>
+        </div>
     </div>
-    <p class="pill">Last measured 28 Oct 2026, 17:40 UTC</p>
-  </div>
+
+    <!-- LIVE MARKET TICKER BAR -->
+    <div class="ticker-bar">
+        <div class="ticker-items" id="tickerBarItems">
+            <span class="ticker-pair active" onclick="selectPair('BTCUSDT')" id="tick_BTCUSDT">BTC/USDT: <strong style="color:var(--accent-green)">68,450.00</strong></span>
+            <span class="ticker-pair" onclick="selectPair('ETHUSDT')" id="tick_ETHUSDT">ETH/USDT: <strong style="color:var(--accent-green)">3,420.00</strong></span>
+            <span class="ticker-pair" onclick="selectPair('SOLUSDT')" id="tick_SOLUSDT">SOL/USDT: <strong style="color:var(--accent-green)">178.50</strong></span>
+            <span class="ticker-pair" onclick="selectPair('MVISUSDT')" id="tick_MVISUSDT">MVIS/USDT (DEX): <strong style="color:var(--accent-blue)">1.2500</strong></span>
+        </div>
+        <div id="marketShockBanner" style="color: var(--accent-yellow); font-weight: bold;">
+            ⚡ Rinka: Gyvas srautas | Maklerio šokas: 0.0%
+        </div>
+    </div>
+
+    <!-- 3 PAKOPŲ JUOSTA -->
+    <div class="day-tabs">
+        <div class="day-tab active" id="tab_stage1" onclick="switchStage('stage1')">
+            <div class="day-tab-title">
+                <span id="tab1Title">1. 🔬 Quant ir Krizių Laboratorija</span>
+                <span class="status-pill pill-open" id="tab1Badge">10 SITUACIJŲ</span>
+            </div>
+            <div class="day-tab-sub" id="tab1Sub">Išmokite atpažinti Rugpull spąstus, likvidacijas ir surinkite ≥60% atestacijai</div>
+        </div>
+        <div class="day-tab" id="tab_stage2" onclick="switchStage('stage2')">
+            <div class="day-tab-title">
+                <span id="tab2Title">2. 📈 Prop Firm Birža (Paper Trading)</span>
+                <span class="status-pill pill-orange">LONG / SHORT + CO-PILOT</span>
+            </div>
+            <div class="day-tab-sub" id="tab2Sub">Prekiaukite realiu laiku su 1 000 USDT, Stop-Loss ir išgyvenkite Maklerio šokus</div>
+        </div>
+        <div class="day-tab" id="tab_stage3" onclick="switchStage('stage3')">
+            <div class="day-tab-title">
+                <span id="tab3Title">3. 🌐 Web3 DEX ir MiCA Sertifikatas</span>
+                <span class="status-pill pill-purple" id="tab3Badge">🔒 REIKIA ≥60%</span>
+            </div>
+            <div class="day-tab-sub" id="tab3Sub">Atsiimkite 4 ak. val. ES MiCA sertifikatą ir prekiaukite per x*y=k DEX šliuzą</div>
+        </div>
+    </div>
+
+    <!-- LOGIN SCREEN -->
+    <div id="loginScreen" class="card login-box">
+        <div style="color: var(--accent-orange); font-weight: bold; font-size: 0.85rem; margin-bottom: 6px;">
+            METAVISION.CLICK • INTERAKTYVI BIRŽOS AKADEMIJA IR ARENA
+        </div>
+        <h2 style="color: var(--accent-blue); margin-bottom: 8px;" id="loginHeading">
+            Pradėkite 4 ak. val. Kripto Rizikos ir Biržos Praktikumą
+        </h2>
+        <p style="color: var(--text-sub); font-size: 0.92rem;" id="loginDesc">
+            Kiekvienas dalyvis gauna <strong>1 000 USDT</strong> startinį virtualų kapitalą ir <strong>MetaVision Risk Co-Pilot</strong> vedlį. Pasiekite ≥60% tikslumą, gaukite vardinį sertifikatą ir atrakinkite Web3 DEX terminalą!
+        </p>
+        <input type="text" id="playerNameInput" class="login-input" placeholder="Įveskite savo vardą arba slapyvardį (pvz., Marius_LT)" maxlength="24">
+        <button class="btn btn-primary" style="width: 100%; justify-content: center; padding: 13px; font-size: 1rem;" onclick="startArenaSession()">
+            🚀 Aktyvuoti 1 000 USDT portfelį ir pradėti
+        </button>
+    </div>
+
+    <!-- MAIN WORKSPACE -->
+    <div id="mainWorkspace" style="display: none;">
+        <div class="main-grid">
+            <div>
+                <!-- HUD BAR -->
+                <div class="hud-bar">
+                    <div class="hud-item">
+                        <div class="hud-label">Prekiautojas</div>
+                        <div class="hud-value" id="hudName" style="color: var(--accent-blue); font-size: 1.02rem;">-</div>
+                    </div>
+                    <div class="hud-item">
+                        <div class="hud-label">Laisvas Balansas</div>
+                        <div class="hud-value" id="hudBalance" style="color: var(--accent-green);">1000.00 $</div>
+                    </div>
+                    <div class="hud-item">
+                        <div class="hud-label">Portfelio Vertė (Equity)</div>
+                        <div class="hud-value" id="hudEquity" style="color: var(--text-main);">1000.00 $</div>
+                    </div>
+                    <div class="hud-item">
+                        <div class="hud-label">Atestacija (Tikslumas)</div>
+                        <div class="hud-value" id="hudAccuracy" style="color: var(--accent-yellow);">0% (0/10)</div>
+                    </div>
+                    <div class="hud-item">
+                        <div class="hud-label">PRO Vedlys / DEX</div>
+                        <div class="hud-value" id="hudProStatus" style="color: var(--accent-purple); font-size: 0.95rem;">BAZINIS</div>
+                    </div>
+                </div>
+
+                <!-- PAKOPA 1: QUANT & CRISIS LAB -->
+                <div id="view_stage1" class="card">
+                    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:10px; margin-bottom:14px; flex-wrap:wrap; gap:8px;">
+                        <span class="status-pill pill-open" id="missionProgressBadge">Situacija 1 / 10</span>
+                        <span id="missionCategoryBadge" style="font-size:0.84rem; color:var(--accent-purple); font-weight:bold;">🔬 On-Chain ir Rizikos Laboratorija</span>
+                    </div>
+                    <h2 id="missionTitle" style="margin-bottom: 10px; font-size: 1.25rem;"></h2>
+                    <div class="story-box" id="missionStory"></div>
+                    <div id="missionInteractionArea"></div>
+                    <div id="missionFeedbackBox" style="display:none; margin-top:14px; padding:13px; border-radius:10px;"></div>
+                    <div style="display:flex; gap:10px; margin-top:14px; flex-wrap:wrap;">
+                        <button id="nextMissionBtn" class="btn btn-primary" style="display:none; flex:1; justify-content:center; padding:12px;" onclick="nextQuantMission()">
+                            Kita situacija ➡️
+                        </button>
+                        <button class="btn btn-orange" onclick="switchStage('stage2')">
+                            📈 Eiti tiesiai į gyvą prekybos grafiką
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PAKOPA 2: LIVE PAPER TRADING + RISK CO-PILOT -->
+                <div id="view_stage2" class="card" style="display: none;">
+                    <div class="trading-grid">
+                        <!-- CHART SIDE -->
+                        <div>
+                            <div class="chart-box">
+                                <div class="chart-header">
+                                    <div>
+                                        <strong id="chartPairTitle" style="font-size: 1.1rem; color: var(--accent-blue);">BTC/USDT</strong>
+                                        <span id="chartLivePrice" style="font-family: monospace; font-size: 1.2rem; font-weight: 800; margin-left: 10px; color: var(--accent-green);">68,450.00</span>
+                                    </div>
+                                    <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                                        <button class="btn" style="padding: 4px 9px; font-size: 0.76rem;" onclick="triggerBrokerShock(-0.08, 'Local Dip -8%')">📉 Dip -8%</button>
+                                        <button class="btn" style="padding: 4px 9px; font-size: 0.76rem;" onclick="triggerBrokerShock(0.08, 'Local Pump +8%')">📈 Pump +8%</button>
+                                        <button class="btn btn-danger" style="padding: 4px 9px; font-size: 0.76rem;" onclick="triggerBrokerShock(-0.25, 'FLASH CRASH -25%')">💥 Flash Crash -25%</button>
+                                    </div>
+                                </div>
+                                <canvas id="priceChart" width="680" height="290"></canvas>
+                            </div>
+
+                            <!-- METAVISION RISK CO-PILOT -->
+                            <div class="copilot-box" id="copilotPanel">
+                                <div class="copilot-header">
+                                    <span style="color: var(--accent-blue);">🤖 MetaVision Risk Co-Pilot (Skaitmeninis Vedlys)</span>
+                                    <span class="status-pill pill-open" id="copilotRiskBadge">SAUGI RIZIKA</span>
+                                </div>
+                                <div id="copilotAdviceText" style="font-size: 0.85rem; color: var(--text-main); margin-bottom: 8px;">
+                                    Pasirinkite maržą, svertą ir Stop-Loss – vedlys apskaičiuos likvidacijos kainą ir portfelio riziką.
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                                    <span id="copilotMathText" style="font-family: monospace; font-size: 0.8rem; color: var(--accent-yellow);">
+                                        Likvidacija: - | Rizika portfeliui: 0.0%
+                                    </span>
+                                    <button class="btn btn-purple" style="padding: 5px 10px; font-size: 0.78rem;" onclick="applyCoPilotSafeSetup()">
+                                        ⚡ Pritaikyti saugią 2% riziką (Auto-Guard)
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ORDER EXECUTION SIDE -->
+                        <div class="order-panel">
+                            <h3 style="font-size: 1rem; color: var(--accent-blue); margin-bottom: 10px;">⚡ Pozicijos Valdymas (Market Order)</h3>
+
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px;">
+                                <button class="btn btn-green" id="dirBtnLong" style="justify-content:center; border-width:2px;" onclick="setOrderDirection('LONG')">📈 LONG (Kilimas)</button>
+                                <button class="btn" id="dirBtnShort" style="justify-content:center;" onclick="setOrderDirection('SHORT')">📉 SHORT (Kritimas)</button>
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    <span>Marža (Investuojama suma USDT)</span>
+                                    <span style="color:var(--accent-blue); cursor:pointer;" onclick="setMarginPercent(0.25)">25%</span>
+                                    <span style="color:var(--accent-blue); cursor:pointer;" onclick="setMarginPercent(0.5)">50%</span>
+                                </label>
+                                <input type="number" id="orderMarginInput" class="form-input" value="200" min="10" max="10000" oninput="updateCoPilotAnalysis()">
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    <span>Svertas (Leverage): <strong id="levLabel" style="color:var(--accent-orange);">5x</strong></span>
+                                    <span id="notionalLabel" style="font-family:monospace;">Pozicija: 1,000 USDT</span>
+                                </label>
+                                <input type="range" id="orderLeverageInput" min="1" max="50" value="5" style="width:100%;" oninput="updateCoPilotAnalysis()">
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    <span>Stop-Loss kaina (Apsauga nuo likvidacijos)</span>
+                                    <span style="color:var(--accent-green); cursor:pointer;" onclick="setAutoStopLoss()">Auto -3%</span>
+                                </label>
+                                <input type="number" id="orderSlInput" class="form-input" placeholder="Pvz., 66500 (Rekomenduojama)" step="any" oninput="updateCoPilotAnalysis()">
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    <span>Take-Profit kaina (Pelno fiksavimas)</span>
+                                    <span style="color:var(--accent-blue); cursor:pointer;" onclick="setAutoTakeProfit()">Auto +6%</span>
+                                </label>
+                                <input type="number" id="orderTpInput" class="form-input" placeholder="Neprivaloma" step="any" oninput="updateCoPilotAnalysis()">
+                            </div>
+
+                            <button class="btn btn-primary" style="width: 100%; justify-content: center; padding: 12px; margin-top: 6px;" onclick="openPaperPosition()">
+                                🚀 Atidaryti poziciją
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- ACTIVE POSITIONS TABLE -->
+                    <div style="margin-top: 16px;">
+                        <h3 style="font-size: 0.96rem; color: var(--accent-yellow);">📊 Atviros Pozicijos (Realaus laiko PNL ir Likvidacijos)</h3>
+                        <div style="overflow-x: auto;">
+                            <table class="positions-table">
+                                <thead>
+                                    <tr>
+                                        <th>Pora / Kryptis</th>
+                                        <th>Marža / Svertas</th>
+                                        <th>Įėjimo Kaina</th>
+                                        <th>Likvidacijos Kaina</th>
+                                        <th>Stop-Loss / TP</th>
+                                        <th>PNL (USDT / %)</th>
+                                        <th>Veiksmas</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="openPositionsBody">
+                                    <tr><td colspan="7" style="text-align:center; color:var(--text-sub);">Nėra atvirų pozicijų. Naudokite Co-Pilot vedlį ir atidarykite sandorį!</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAKOPA 3: WEB3 DEX & ES MiCA CERTIFICATE -->
+                <div id="view_stage3" class="card" style="display: none;">
+                    <div id="stage3LockedNotice" style="background: rgba(251, 146, 60, 0.12); border: 1px solid var(--accent-orange); border-radius: 12px; padding: 14px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                        <div>
+                            <strong style="color: var(--accent-orange);">🔒 Reikia ≥60% atestacijos rezultato arba Demo atrakinimo</strong>
+                            <div style="font-size: 0.84rem; color: var(--text-sub);">Atsakykite bent 6 iš 10 situacijų 1-oje pakopoje arba paspauskite demonstracinį atrakinimą pirkimų komisijai.</div>
+                        </div>
+                        <button class="btn btn-orange" onclick="unlockStage3Demo()">🔓 Atrakinti demonstracijai (Demo)</button>
+                    </div>
+
+                    <div class="dex-grid">
+                        <!-- WEB3 DEX SWAP (x * y = k) -->
+                        <div class="order-panel">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                                <h3 style="color: var(--accent-blue); font-size: 1.02rem;">🌐 Web3 DEX AMM Šliuzas (x * y = k)</h3>
+                                <button class="btn btn-purple" style="padding:5px 10px; font-size:0.78rem;" onclick="connectWeb3Wallet()" id="walletBtn">🦊 Connect Wallet</button>
+                            </div>
+                            <p style="font-size: 0.8rem; color: var(--text-sub); margin-bottom: 12px;">
+                                Neglobojamas (Non-Custodial) baseinas: <strong>0 € įėjimo mokestis</strong>, <strong>0.15%</strong> šliuzo komisinis. Atlikite 1 Swap ir gaukite PRO sertifikatą nemokamai!
+                            </p>
+
+                            <div style="background:#090d16; border:1px solid var(--border); border-radius:10px; padding:10px; margin-bottom:10px; font-family:monospace; font-size:0.8rem;">
+                                Baseino likvidumas: <strong id="dexPoolInfo" style="color:var(--accent-green);">100,000 MVIS / 125,000 USDT</strong>
+                            </div>
+
+                            <div class="form-group">
+                                <label><span>Keičiama suma (USDT ➡️ MVIS)</span><span>Balansas: <strong id="dexUsdtBal">1000.00</strong> USDT</span></label>
+                                <input type="number" id="dexSwapInput" class="form-input" value="250" min="10" max="50000" oninput="calculateDexSwapPreview()">
+                            </div>
+
+                            <div style="background:#090d16; border:1px solid var(--border); border-radius:8px; padding:10px; font-size:0.82rem; margin-bottom:12px;">
+                                <div style="display:flex; justify-content:space-between;"><span>Gausite (MVIS):</span><strong id="dexOutMvis" style="color:var(--accent-blue);">199.30 MVIS</strong></div>
+                                <div style="display:flex; justify-content:space-between;"><span>Kainos praslydimas (Slippage):</span><strong id="dexSlippage" style="color:var(--accent-yellow);">0.20%</strong></div>
+                                <div style="display:flex; justify-content:space-between;"><span>MetaVision šliuzo komisinis (0.15%):</span><strong id="dexFee">0.38 USDT</strong></div>
+                            </div>
+
+                            <button class="btn btn-primary" style="width:100%; justify-content:center; padding:12px;" onclick="executeDexSwap()">
+                                🔄 Vykdyti AMM Swap (Atrakina PRO & PDF)
+                            </button>
+                        </div>
+
+                        <!-- 4 AK. VAL. ES MiCA SERTIFIKATAS -->
+                        <div class="cert-preview" id="certificateBox">
+                            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:8px; margin-bottom:10px;">
+                                <div>
+                                    <div style="font-size:0.74rem; color:var(--accent-blue); font-weight:bold;">METAVISION ACADEMY • ES MiCA ATITIKTIS</div>
+                                    <h3 style="font-size:1.08rem;">Kripto Rizikos Valdymo Sertifikatas</h3>
+                                </div>
+                                <span class="status-pill pill-open" id="certIdBadge">ID: MV-2026-PENDING</span>
+                            </div>
+
+                            <div style="font-size:0.86rem; margin-bottom:10px;">
+                                Pažymima, kad <strong id="certHolderName" style="color:var(--accent-blue); font-size:1rem;">Dalyvis</strong> baigė <strong>4 akademinių valandų (180 min.)</strong> praktinį rizikos valdymo ir saugios prekybos kursą.
+                            </div>
+
+                            <div style="background:#090d16; border:1px solid var(--border); border-radius:10px; padding:10px; font-size:0.78rem; margin-bottom:12px;">
+                                <div style="color:var(--accent-orange); font-weight:bold; margin-bottom:4px;">📋 Kompetencijų išrašas (4 ak. val. / 180 min.):</div>
+                                <div>✅ 1. CEX / DEX architektūra ir AMM (x*y=k) Slippage matematika</div>
+                                <div>✅ 2. Sverto (Leverage), maržos ir Stop-Loss likvidacijų prevencija</div>
+                                <div>✅ 3. On-Chain saugumas: Rugpull ir Honeypot kontraktų patikra</div>
+                                <div>✅ 4. ES MiCA klientų tinkamumo ir rinkos šokų (Black Swan) valdymas</div>
+                            </div>
+
+                            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                                <button class="btn btn-primary" style="flex:1; justify-content:center;" onclick="downloadOfficialCertificate()">
+                                    🖨️ Atsisiųsti PDF Sertifikatą + PRO (9.90 USDT arba 0 € po DEX Swap)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDEBAR -->
+            <div>
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h3 style="color: var(--accent-yellow); font-size: 1rem;">🏆 Biržos TOP 15 (Pagal Equity)</h3>
+                        <span id="onlineCountBadge" style="font-size: 0.78rem; color: var(--accent-green);">1 prisijungęs</span>
+                    </div>
+                    <div class="leaderboard-list" id="leaderboardList"></div>
+                </div>
+
+                <div class="card">
+                    <h3 style="color: var(--accent-blue); font-size: 0.95rem; margin-bottom: 10px;">🌐 On-Chain ir Analitikos Įrankiai</h3>
+                    <div style="display: flex; flex-direction: column; gap: 7px;">
+                        <a href="https://dexscreener.com" target="_blank" class="btn">🔗 DEXScreener (Likvidumo patikra)</a>
+                        <a href="https://tokensniffer.com" target="_blank" class="btn">🔗 TokenSniffer (Honeypot skeneris)</a>
+                        <a href="https:// revoke.cash" target="_blank" class="btn">🔗 Revoke.cash (Web3 leidimų atšaukimas)</a>
+                        <a href="https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica" target="_blank" class="btn">🔗 ESMA MiCA Reglamentavimas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="wrap">
-  <header>
-    <h1>Metaverse land communities</h1>
-    <p class="lead">Every project on this page sells land in a virtual world, and most of them talk to their users on Discord and Telegram. We count members and how many are online, using only public invite pages, and keep every measurement so changes over time become visible.</p>
-    <p class="measured">15 projects. Every measurement kept since 27 Oct 2026, 04:42 UTC.</p>
-  </header>
-
-  <main>
-    <section class="chart">
-      <h2>Size and activity</h2>
-      <p class="chart-lead">Each dot is one project's Discord server. Further right means more members; higher means a larger share of them online at measurement time. A big community is not always a lively one.</p>
-      <div class="chart-wrap"><svg viewBox="0 0 760 440" role="img" aria-label="Scatter chart of 14 projects: Discord members against share of members online"><line x1="62.0" y1="34" x2="62.0" y2="384" class="grid"/><text x="62.0" y="404" class="tick" text-anchor="middle">100</text><line x1="230.5" y1="34" x2="230.5" y2="384" class="grid"/><text x="230.5" y="404" class="tick" text-anchor="middle">1k</text><line x1="399.0" y1="34" x2="399.0" y2="384" class="grid"/><text x="399.0" y="404" class="tick" text-anchor="middle">10k</text><line x1="567.5" y1="34" x2="567.5" y2="384" class="grid"/><text x="567.5" y="404" class="tick" text-anchor="middle">100k</text><line x1="736.0" y1="34" x2="736.0" y2="384" class="grid"/><text x="736.0" y="404" class="tick" text-anchor="middle">1M</text><line x1="62" y1="384.0" x2="736" y2="384.0" class="grid"/><text x="52" y="388.0" class="tick" text-anchor="end">0%</text><line x1="62" y1="325.7" x2="736" y2="325.7" class="grid"/><text x="52" y="329.7" class="tick" text-anchor="end">2%</text><line x1="62" y1="267.3" x2="736" y2="267.3" class="grid"/><text x="52" y="271.3" class="tick" text-anchor="end">4%</text><line x1="62" y1="209.0" x2="736" y2="209.0" class="grid"/><text x="52" y="213.0" class="tick" text-anchor="end">6%</text><line x1="62" y1="150.7" x2="736" y2="150.7" class="grid"/><text x="52" y="154.7" class="tick" text-anchor="end">8%</text><line x1="62" y1="92.3" x2="736" y2="92.3" class="grid"/><text x="52" y="96.3" class="tick" text-anchor="end">10%</text><line x1="62" y1="34.0" x2="736" y2="34.0" class="grid"/><text x="52" y="38.0" class="tick" text-anchor="end">12%</text><text x="399" y="428" class="axis" text-anchor="middle">Discord members (log scale)</text><text x="16" y="209" class="axis" text-anchor="middle" transform="rotate(-90 16 209)">Share online now</text><text x="72" y="50" class="hint">Smaller, more active</text><text x="726" y="372" class="hint" text-anchor="end">Larger, quieter</text><g transform="translate(486 14)"><circle cx="6" cy="0" r="5" class="dot real"/><text x="16" y="4" class="tick">Real-world map</text><circle cx="136" cy="0" r="5" class="dot virtual"/><text x="146" y="4" class="tick">Virtual world</text></g><g><title>The Sandbox: 249,787 members, 9,097 online (3.6%)</title><circle cx="634.5" cy="277.8" r="6" class="dot virtual"/><text x="644.5" y="281.8" class="label" text-anchor="start">The Sandbox</text></g><g><title>Pixels: 209,608 members, 9,090 online (4.3%)</title><circle cx="621.7" cy="257.5" r="6" class="dot virtual"/><text x="631.7" y="261.5" class="label" text-anchor="start">Pixels</text></g><g><title>Decentraland: 130,145 members, 3,481 online (2.7%)</title><circle cx="586.8" cy="306.0" r="6" class="dot virtual"/><text x="596.8" y="310.0" class="label" text-anchor="start">Decentraland</text></g><g><title>Wilder World: 42,268 members, 1,825 online (4.3%)</title><circle cx="504.5" cy="258.1" r="6" class="dot virtual"/><text x="514.5" y="262.1" class="label" text-anchor="start">Wilder World</text></g><g><title>Alien Worlds: 34,298 members, 1,858 online (5.4%)</title><circle cx="489.2" cy="226.0" r="6" class="dot virtual"/><text x="499.2" y="230.0" class="label" text-anchor="start">Alien Worlds</text></g><g><title>Upland: 31,951 members, 2,417 online (7.6%)</title><circle cx="484.0" cy="163.4" r="6" class="dot real"/><text x="494.0" y="167.4" class="label" text-anchor="start">Upland</text></g><g><title>Bit.Country (Mnet): 31,191 members, 665 online (2.1%)</title><circle cx="482.2" cy="321.8" r="6" class="dot virtual"/><text x="492.2" y="325.8" class="label" text-anchor="start">Bit.Country (Mnet)</text></g><g><title>Aavegotchi: 24,909 members, 1,354 online (5.4%)</title><circle cx="465.8" cy="225.5" r="6" class="dot virtual"/><text x="455.8" y="229.5" class="label" text-anchor="end">Aavegotchi</text></g><g><title>Earth 2: 17,164 members, 1,571 online (9.2%)</title><circle cx="438.5" cy="117.0" r="6" class="dot real"/><text x="448.5" y="121.0" class="label" text-anchor="start">Earth 2</text></g><g><title>OVER (OVR): 9,650 members, 278 online (2.9%)</title><circle cx="396.4" cy="300.0" r="6" class="dot real"/><text x="406.4" y="304.0" class="label" text-anchor="start">OVER (OVR)</text></g><g><title>SuperWorld: 7,455 members, 88 online (1.2%)</title><circle cx="377.5" cy="349.6" r="6" class="dot real"/><text x="387.5" y="353.6" class="label" text-anchor="start">SuperWorld</text></g><g><title>Somnium Space: 6,253 members, 1,477 online (23.6%)</title><circle cx="364.6" cy="34.0" r="6" class="dot over"/><path d="M359.6 25.0 L364.6 19.0 L369.6 25.0" class="arrow"/><text x="374.6" y="38.0" class="label flag" text-anchor="start">Somnium Space 23.6%</text></g><g><title>Next Earth: 715 members, 5 online (0.7%)</title><circle cx="206.0" cy="363.6" r="6" class="dot real"/><text x="216.0" y="367.6" class="label" text-anchor="start">Next Earth</text></g><g><title>Ertha: 182 members, 5 online (2.7%)</title><circle cx="105.8" cy="303.9" r="6" class="dot real"/><text x="115.8" y="307.9" class="label" text-anchor="start">Ertha</text></g></svg></div>
-      <p class="scale-note">Values above 12% are pinned to the top and marked. Not shown, no readable Discord invite: Spheroid Universe.</p>
-    </section>
-    <div class="panel">
-    <div class="table-scroll">
-    <table>
-      <thead>
-        <tr>
-          <th scope="col">Project</th>
-          <th scope="col" class="num">Discord members</th>
-          <th scope="col" class="num">Online now</th>
-          <th scope="col">Share online</th>
-          <th scope="col" class="num">Telegram</th>
-          <th scope="col">What we noticed</th>
-        </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <th scope="row" class="project">
-          <a href="https://www.sandbox.game" rel="nofollow noopener">The Sandbox</a>
-          <span class="sub">Virtual world</span>
-        </th>
-        <td class="num"><a href="https://discord.gg/thesandboxgame" rel="nofollow noopener">249,787</a></td>
-        <td class="num">9,097</td>
-        <td class="share">
-          <span class="track" role="img" aria-label="3.6% of Discord members online">
-            <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
-            <span class="mark-v" style="left:36.4%"></span>
-          </span>
-          <span class="share-num">3.6%</span>
-        </td>
-        <td class="num"><span class="none">-</span></td>
-        <td class="notes"></td>
-      </tr>
-      <tr>
-        <th scope="row" class="project">
-          <a href="https://www.pixels.xyz" rel="nofollow noopener">Pixels</a>
-          <span class="sub">Virtual world</span>
-        </th>
-        <td class="num"><a href="https://discord.gg/pixels" rel="nofollow noopener">209,608</a></td>
-        <td class="num">9,090</td>
-        <td class="share">
-          <span class="track" role="img" aria-label="4.3% of Discord members online">
-            <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
-            <span class="mark-v" style="left:43.4%"></span>
-          </span>
-          <span class="share-num">4.3%</span>
-        </td>
-        <td class="num"><span class="none">-</span></td>
-        <td class="notes"></td>
-      </tr>
-      <tr>
-        <th scope="row" class="project">
-          <a href="https://decentraland.org" rel="nofollow noopener">Decentraland</a>
-          <span class="sub">Virtual world</span>
-        </th>
-        <td class="num"><a href="https://discord.gg/decentraland" rel="nofollow noopener">130,145</a></td>
-        <td class="num">3,481</td>
-        <td class="share">
-          <span class="track" role="img" aria-label="2.7% of Discord members online">
-            <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
-            <span class="mark-v" style="left:26.7%"></span>
-          </span>
-          <span class="share-num">2.7%</span>
-        </td>
-        <td class="num"><span class="none">-</span></td>
-        <td class="notes"></td>
-      </tr>
-      <tr>
-        <th scope="row" class="project">
-          <a href="https://www.wilderworld.com" rel="nofollow noopener">Wilder World</a>
-          <span class="sub">Virtual world</span>
-        </th>
-        <td class="num"><a href="https://discord.gg/wilderworld" rel="nofollow noopener">42,268</a></td>
-        <td class="num">1,825</td>
-        <td class="share">
-          <span class="track" role="img" aria-label="4.3% of Discord members online">
-            <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
-            <span class="mark-v" style="left:43.2%"></span>
-          </span>
-          <span class="share-num">4.3%</span>
-        </td>
-        <td class="num"><a href="https://t.me/wilderworld" rel="nofollow noopener">2</a><span class="sub">channel</span></td>
-        <td class="notes"><p>The Telegram link leads to a channel with 2 subscribers.</p></td>
-      </tr>
-      <tr>
-        <th scope="row" class="project">
-          <a href="https://alienworlds.io" rel="nofollow noopener">Alien Worlds</a>
-          <span class="sub">Virtual world</span>
-        </th>
-        <td class="num"><a href="https://discord.gg/wswdNGKwXQ" rel="nofollow noopener">34,298</a></td>
-        <td class="num">1,858</td>
-        <td class="share">
-          <span class="track" role="img" aria-label="5.4% of Discord members online">
-            <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
-            <span class="mark-v" style="left:54.2%"></span>
-          </span>
-          <span class="share-num">5.4%</span>
-        </td>
-        <td class="num"><a href="https://t.me/AlienWorlds_Announcements" rel="nofollow noopener">2,111</a><span class="sub">channel</span></td>
-        <td class="notes"></td>
-      </tr>
-      <tr>
-        <th scope="row" class="project">
-          <a href="https://upland.me" rel="nofollow noopener">Upland</a>
-          <span class="sub">Real-world map</span>
-        </th>
-        <td class="num"><a href="https://discord.gg/upland" rel="nofollow noopener">31,951</a></td>
-        <td class="num">2,417</td>
-        <td class="share">
-          <span class="track" role="img" aria-label="7.6% of Discord members online">
-            <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
-            <span class="mark-v" style="left:75.6%"></span>
-          </span>
-          <span class="share-num">7.6%</span>
-        </td>
-        <td class="num"><a href="https://t.me/upland" rel="nofollow noopener">10,572</a><span class="sub">320 online</span></td>
-        <td class="notes"></td>
-      </tr>
-      <tr>
-        <th scope="row" class="project">
-          <a href="https://bit.country" rel="nofollow noopener">Bit.Country (Mnet)</a>
-          <span class="sub">Virtual world</span>
-        </th>
-        <td class="num"><a href="https://discord.gg/PaMAXZZ59N" rel="nofollow noopener">31,191</a></td>
-        <td class="num">665</td>
-        <td class="share">
-          <span class="track" role="img" aria-label="2.1% of Discord members online">
-            <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
-            <span class="mark-v" style="left:21.3%"></span>
-          </span>
-          <span class="share-num">2.1%</span>
-        </td>
-        <td class="num"><span class="none">-</span></td>
-        <td class="notes"></td>
-      </tr>
-      <tr>
-        <th scope="row" class="project">
-          <a href="https://www.aavegotchi.com" rel="nofollow noopener">Aavegotchi</a>
-          <span class="sub">Virtual world</span>
-        </th>
-        <td class="num"><a href="https://discord.gg/aavegotchi" rel="nofollow noopener">24,909</a></td>
-        <td class="num">1,354</td>
-        <td class="share">
-          <span class="track" role="img" aria-label="5.4% of Discord members online">
-            <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
-            <span class="mark-v" style="left:54.4%"></span>
-          </span>
-          <span class="share-num">5.4%</span>
-        </td>
-        <td class="num"><span class="none">-</span></td>
-        <td class="notes"></td>
-      </tr>
-      <tr>
-        <th scope="row" class="project">
-          <a href="https://earth2.io" rel="nofollow noopener">Earth 2</a>
-          <span class="sub">Real-world map</span>
-        </th>
-        <td class="num"><a href="https://discord.gg/earth2" rel="nofollow noopener">17,164</a></td>
-        <td class="num">1,571</td>
-        <td class="share">
-          <span class="track" role="img" aria-label="9.2% of Discord members online">
-            <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
-            <span class="mark-v" style="left:91.5%"></span>
-          </span>
-          <span class="share-num">9.2%</span>
-        </td>
-        <td class="num"><span class="none">-</span></td>
-        <td class="notes"></td>
-      </tr>
-      <tr>
-        <th scope="row" class="project">
-          <a href="https://www.overthereality.ai" rel="nofollow noopener">OVER (OVR)</a>
-          <span class="sub">Real-world map</span>
-        </th>
-        <td class="num"><a href="https://discord.gg/overthereality" rel="nofollow noopener">9,650</a></td>
-        <td class="num">278</td>
-        <td class="share">
-          <span class="track" role="img" aria-label="2.9% of Discord members online">
-            <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
-            <span class="mark-v" style="left:28.8%"></span>
-          </span>
-          <span class="share-num">2.9%</span>
-        </td>
-        <td class="num"><a href="https://t.me/OVRtheReality" rel="nofollow noopener">6,729</a><span class="sub">176 online</span></td>
-        <td class="notes"></td>
-      </tr>
-      <tr>
-        <th scope="row" class="project">
-          <a href="https://www.superworldapp.com" rel="nofollow noopener">SuperWorld</a>
-          <span class="sub">Real-world map</span>
-        </th>
-        <td class="num"><a href="https://discord.gg/ZUMJjrg4nx" rel="nofollow noopener">7,455</a></td>
-        <td class="num">88</td>
-        <td class="share">
-          <span class="track" role="img" aria-label="1.2% of Discord members online">
-            <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
-            <span class="mark-v" style="left:11.8%"></span>
-          </span>
-          <span class="share-num">1.2%</span>
-        </td>
-        <td class="num"><a href="https://t.me/superworldtoken" rel="nofollow noopener">27,015</a><span class="sub">159 online</span></td>
-        <td class="notes"></td>
-      </tr>
-      <tr>
-        <th scope="row" class="project">
-          <a href="https://somniumspace.com" rel="nofollow noopener">Somnium Space</a>
-          <span class="sub">Virtual world</span>
-        </th>
-        <td class="num"><a href="https://discord.gg/somniumspace" rel="nofollow noopener">6,253</a></td>
-        <td class="num">1,477</td>
-        <td class="share">
-          <span class="track over" role="img" aria-label="23.6% of Discord members online">
-            <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
-            <span class="mark-v" style="left:100.0%"></span>
-          </span>
-          <span class="share-num flag">23.6%</span>
-        </td>
-        <td class="num"><span class="none">-</span></td>
-        <td class="notes"><p>23.6% of Discord members were online at measurement time, well above most projects on this page.</p></td>
-      </tr>
-      <tr>
-        <th scope="row" class="project">
-          <a href="https://nextearth.io" rel="nofollow noopener">Next Earth</a>
-          <span class="sub">Real-world map</span>
-        </th>
-        <td class="num"><a href="https://discord.gg/354vcNaD" rel="nofollow noopener">715</a></td>
-        <td class="num">5</td>
-        <td class="share">
-          <span class="track" role="img" aria-label="0.7% of Discord members online">
-            <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
-            <span class="mark-v" style="left:7.0%"></span>
-          </span>
-          <span class="share-num">0.7%</span>
-        </td>
-        <td class="num"><a href="https://t.me/nextearth_chat" rel="nofollow noopener">3,087</a><span class="sub">99 online</span></td>
-        <td class="notes"></td>
-      </tr>
-      <tr>
-        <th scope="row" class="project">
-          <a href="https://ertha.io" rel="nofollow noopener">Ertha</a>
-          <span class="sub">Real-world map</span>
-        </th>
-        <td class="num"><a href="https://discord.gg/ertha" rel="nofollow noopener">182</a></td>
-        <td class="num">5</td>
-        <td class="share">
-          <span class="track" role="img" aria-label="2.7% of Discord members online">
-            <span class="tick" style="left:20%"></span><span class="tick" style="left:40%"></span><span class="tick" style="left:60%"></span><span class="tick" style="left:80%"></span>
-            <span class="mark-v" style="left:27.5%"></span>
-          </span>
-          <span class="share-num">2.7%</span>
-        </td>
-        <td class="num"><a href="https://t.me/erthagame" rel="nofollow noopener">7,106</a><span class="sub">channel</span></td>
-        <td class="notes"></td>
-      </tr>
-      <tr>
-        <th scope="row" class="project">
-          <a href="https://spheroiduniverse.io" rel="nofollow noopener">Spheroid Universe</a>
-          <span class="sub">Real-world map</span>
-        </th>
-        <td class="num"><span class="none">-</span></td><td class="num"><span class="none">-</span></td>
-        <td class="share"><span class="none">-</span></td>
-        <td class="num"><a href="https://t.me/spheroiduniverseio" rel="nofollow noopener">17,688</a><span class="sub">284 online</span></td>
-        <td class="notes"><p>The Discord invite linked on the website could not be opened at measurement time.</p></td>
-      </tr>
-      </tbody>
-    </table>
+<!-- MODAL 1: AKADEMIJOS GIDAS IR ŠPARGALKĖ (Užpildoma iš data.js arba market.js) -->
+<div class="modal-overlay" id="handbookModal">
+    <div class="modal-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+            <h2 style="color: var(--accent-blue);">📖 MetaVision Akademijos Gidas ir Biržos Špargalkė (4 ak. val.)</h2>
+            <button class="btn btn-danger" onclick="toggleModal('handbookModal', false)">✖ Uždaryti</button>
+        </div>
+        <div id="handbookContentBox"></div>
     </div>
-    </div>
-    <p class="scale-note">The share scale runs from 0 to 10%. Values above it are pinned to the end and marked.</p>
-    <p class="scale-note">Not measured yet: Voxels, Otherside, Netvrk. We have not found a working public Discord or Telegram link for these projects.</p>
-
-    <section class="prose">
-      <h2>How we measure</h2>
-      <p>Discord members and online counts come from Discord's public invite page for each project's official invite link. Discord itself reports these numbers as approximate.</p>
-      <p>Telegram counts come from the public t.me page of the project's group or channel. Groups show members and how many are online; channels show subscribers only.</p>
-      <p>Online numbers are a snapshot at the moment of measurement and change through the day. Discord's approximate counts can also stay unchanged for hours, so we compare several measurements before reading anything into a single unusual value.</p>
-      <p>We check that each link belongs to the project by the server or channel name it returns. We use no logins, no private data, and no estimates. Twitter/X follower counts and website traffic are not included, because they cannot be measured reliably from public data.</p>
-    </section>
-
-    <section class="prose">
-      <h2>Data access</h2>
-      <p>The latest measurement for this page is available as JSON:</p>
-      <pre><code>https://crypto.metavision.click/api/v1/metaverse-land.json</code></pre>
-      <p>We keep every measurement. If you want the full history, a CSV export, or alerts when a project's numbers change, write to <a href="https://metavision.click">metavision.click</a>.</p>
-    </section>
-  </main>
-
-  <footer>
-    <a href="https://metavision.click">METAVISION</a> Autonomous Systems &bull; crypto.metavision.click &bull; Public data, no estimates
-  </footer>
 </div>
+
+<!-- MODAL 2: SERTIFIKATO PATIKRA -->
+<div class="modal-overlay" id="verifyModal">
+    <div class="modal-card" style="max-width: 560px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+            <h2 style="color: var(--accent-green);">🎓 Sertifikato Autentiškumo Patikra</h2>
+            <button class="btn btn-danger" onclick="toggleModal('verifyModal', false)">✖ Uždaryti</button>
+        </div>
+        <p style="font-size: 0.88rem; color: var(--text-sub); margin-bottom: 12px;">
+            Įveskite sertifikato ID (pvz., <code>MV-2026-...</code>), kad patikrintumėte 4 ak. val. ES MiCA atitikties įrašą registre:
+        </p>
+        <div style="display: flex; gap: 8px; margin-bottom: 14px;">
+            <input type="text" id="verifyCertInput" class="form-input" placeholder="MV-2026-XXXX">
+            <button class="btn btn-primary" onclick="verifyCertificateById()">Tikrinti</button>
+        </div>
+        <div id="verifyResultBox" style="background:#090d16; border:1px solid var(--border); border-radius:10px; padding:12px; font-size:0.86rem;">
+            Įveskite kodą arba paspauskite ant dalyvio lyderių lentelėje.
+        </div>
+    </div>
+</div>
+
+<!-- MODAL 3: DVIEJŲ LYGIŲ MAKLERIO PULTAS (SANDBOX + 2FA) -->
+<div class="modal-overlay" id="brokerModal">
+    <div class="modal-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+            <h2 style="color: var(--accent-orange);">🏦 Maklerio Valdymo Pultas (Sandbox Demo & Master 2FA)</h2>
+            <button class="btn btn-danger" onclick="toggleModal('brokerModal', false)">✖ Uždaryti</button>
+        </div>
+
+        <!-- 1 LYGIS: VIEŠAS SANDBOX DEMO PIRKIMŲ KOMISIJOMS -->
+        <div style="background:#090d16; border:1px solid var(--accent-blue); border-radius:12px; padding:14px; margin-bottom:16px;">
+            <h3 style="color:var(--accent-blue); font-size:0.98rem; margin-bottom:6px;">🧪 1 Lygis: Sandbox Demo Režimas (Atviras testavimui be PIN)</h3>
+            <p style="font-size:0.82rem; color:var(--text-sub); margin-bottom:10px;">
+                Šie mygtukai sukelia rinkos šoką tik jūsų naršyklėje – idealu pirkimų komisijoms išbandyti Stop-Loss ir likvidacijų mechaniką nepaveikiant bendros duomenų bazės.
+            </p>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                <button class="btn btn-danger" onclick="triggerBrokerShock(-0.25, 'SANDBOX FLASH CRASH -25%')">💥 Sukelti Flash Crash (-25%)</button>
+                <button class="btn btn-green" onclick="triggerBrokerShock(0.30, 'SANDBOX MEGA PUMP +30%')">🚀 Sukelti Mega Pump (+30%)</button>
+                <button class="btn" onclick="triggerBrokerShock(0, 'RESET')">🔄 Atstatyti rinkos kainą</button>
+            </div>
+        </div>
+
+        <!-- 2 LYGIS: MASTER 2FA PULTAS (GOOGLE AUTHENTICATOR) -->
+        <div id="brokerMasterContainer">
+            <h3 style="color:var(--accent-purple); font-size:0.98rem; margin-bottom:6px;">🔐 2 Lygis: Master Makleris (Visų žaidėjų Firebase valdymas su Google Authenticator 2FA)</h3>
+            <p style="font-size:0.82rem; color:var(--text-sub); margin-bottom:10px;">
+                Įveskite 6 skaitmenų Google Authenticator TOTP kodą (arba atsarginį meistro PIN), kad atrakintumėte visuotinį rinkos valdymą ir CSV eksportą.
+            </p>
+            <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px;">
+                <input type="password" id="broker2faInput" class="form-input" style="max-width:240px;" placeholder="6 skaitmenų 2FA kodas">
+                <button class="btn btn-purple" onclick="unlockMasterBroker()">🔓 Atrakinti Master Pultą</button>
+            </div>
+            <div id="masterBrokerControls" style="display:none; background:#090d16; border:1px solid var(--accent-purple); border-radius:12px; padding:14px;"></div>
+        </div>
+    </div>
+</div>
+
+<!-- MODULINIAI SKRIPTAI -->
+<script src="data.js"></script>
+<script src="market.js"></script>
+<script type="module" src="admin.js"></script>
 </body>
 </html>
